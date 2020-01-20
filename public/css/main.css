@@ -72,7 +72,14 @@ p.main__form--terms {
   border-radius: 6px;
   text-align: center; }
 
-input.main__form__input {
+.error {
+  color: #ff7a7a;
+  display: none; }
+
+.error.active {
+  padding: 0.3em; }
+
+input[type=text].main__form__input {
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 15px;
@@ -87,6 +94,12 @@ input:focus.main__form__input {
   border: 1px #3e3c49 solid;
   outline: none;
   color: #3e3c49; }
+
+input:invalid.main__form__input {
+  border-color: #ff7a7a; }
+
+input:focus:invalid.main__form__input {
+  outline: none; }
 
 .main__form__button {
   border-radius: 8px;
