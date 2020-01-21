@@ -31,7 +31,7 @@ body {
   padding: 6%;
   margin: 12% 7%; }
 
-.main__form {
+.main__rightcolumn {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,14 +72,7 @@ p.main__form--terms {
   border-radius: 6px;
   text-align: center; }
 
-.error {
-  color: #ff7a7a;
-  display: none; }
-
-.error.active {
-  padding: 0.3em; }
-
-input[type=text].main__form__input {
+input {
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 15px;
@@ -95,11 +88,30 @@ input:focus.main__form__input {
   outline: none;
   color: #3e3c49; }
 
-input:invalid.main__form__input {
-  border-color: #ff7a7a; }
-
 input:focus:invalid.main__form__input {
   outline: none; }
+
+.input-field small {
+  color: #ff7a7a;
+  display: none; }
+
+.input-field.invalid small {
+  display: contents;
+  font-style: italic;
+  font-size: 0.8rem; }
+
+.input-field.invalid {
+  margin-bottom: 13px;
+  text-align: right;
+  color: #ff7a7a; }
+
+.invalid input {
+  border: 2px solid #ff7a7a;
+  background: url(file:///Users/sydneehaley/Desktop/Sign-Up-Form/images/icon-error.svg);
+  background-position: right 15px center;
+  background-repeat: no-repeat;
+  margin-bottom: 0px;
+  color: #ff7a7a; }
 
 .main__form__button {
   border-radius: 8px;

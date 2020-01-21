@@ -15,20 +15,26 @@
                 but understanding how developers think is invaluable.</p>
         </div>
 
-        <div class="main__form">
+        <div class="main__rightcolumn">
             <button type="button" class="main__form__button main__form__button--topbutton"><span>
                 Try it free 7 days</span> then $20/mo there after</button>
-            <form id="main__form">
-                
-                <input type="text" class="main__form__input" name="fname" placeholder="First Name" id="firstname">
-                <span class="error">Error message</span>
-                <input type="text" class="main__form__input" name="lname" placeholder="Last Name" id="lastname"> 
-                <span class="error">Error message</span>
-                <input type="text" class="main__form__input" name="email" placeholder="Email Address" id="email"> 
-                <span class="error">Error message</span>
-                <input type="text" class="main__form__input" name="password" placeholder="Password" id="password">
-                
-            
+                <form id="main__form">
+                    <div class="input-field">
+                      <input type="text" name="first-name" placeholder="First Name" aria-label="first name" id="first-name">
+                      <small>Error message</small>
+                    </div>
+                    <div class="input-field">
+                      <input type="text" name="last-name" placeholder="Last Name" aria-label="second name" id="last-name">
+                      <small>Error message</small>
+                    </div>
+                    <div class="input-field">
+                      <input type="text" name="email-address" placeholder="Email Address" aria-label="email address" id="email-address">
+                      <small>Error message</small>
+                    </div>
+                    <div class="input-field">
+                      <input type="text" name="password" placeholder="Password" aria-label="password" id="password">
+                    <small>Error message</small>
+                    </div>
                 <button type="submit" class="main__form__button main__form__button--bottombutton">Claim Your Free Trial</button>
                 <p class="main__form--terms">By clicking the button, you are agreeing to out <span>Terms and Services</span></p>
               </form>
