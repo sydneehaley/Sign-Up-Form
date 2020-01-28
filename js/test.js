@@ -45,7 +45,7 @@ form.addEventListener('submit', function(event){
 
   })
 
-  function showError(input, message){
+  function showError(input, message) {
      const inputContainer = input.parentElement;
      const small = inputContainer.querySelector('small');
      inputContainer.className = 'input-field invalid';

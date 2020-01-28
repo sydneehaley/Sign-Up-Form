@@ -25,5 +25,8 @@
   "devDependencies": {
     "node-sass": "^4.13.1",
     "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.0"
   }
 }
