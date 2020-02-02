@@ -9,53 +9,63 @@
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css" />
 </head>
 <body>
+
+  
     <div class="main">
        
+      <div class="main__blurb"> content </div>
 
         <div class="main__rightcolumn">
 
-            <h1>Get started with an<br>
-            free account</h1>
-            <p>See how experienced developers solve problems in real-time. 
-                Watching scripted tutorials is great, 
-                but understanding how developers think is invaluable.</p>
+            <h1>Create An Account</h1>
+            <p>Already have an account? <a href="">Sign in.</a></p>
 
         
                 <form id="main__form">
                     <div class="input-field">
-                      <input type="text" name="first-name" placeholder="First Name*" aria-label="first name" id="first-name">
+                      <p>First Name</p>
+                      <input type="text" name="first-name"  aria-label="first name" id="first-name">
                       <span>Error message</span>
                     </div>
                     <div class="input-field">
-                      <input type="text" name="last-name" placeholder="Last Name*" aria-label="second name" id="last-name">
+                      <p>Last Name</p>
+                      <input type="text" name="last-name"  aria-label="second name" id="last-name">
                       <span>Error message</span>
                     </div>
                     <div class="input-field">
-                      <input type="text" name="email-address" placeholder="Email Address*" aria-label="email address" id="email-address">
+                      <p>Email Address</p>
+                      <input type="text" name="email-address"  aria-label="email address" id="email-address">
                       <span>Error message</span>
                     </div>
                     <div class="input-field">
-                      <button id="showPassword" onclick="showPassword()"><i class="far fa-eye"></i></button>
-                      <input type="text" name="password" placeholder="Password*" aria-label="password" id="password" class="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required> 
+                      <p>Password</p>
+                      <button id="showPassword" onclick="togglePassword()"><i class="far fa-eye"></i></button>
+                      <input type="password" name="password" aria-label="password" id="password" class="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"> 
                       <span>Error message</span>
+
                       </div>
 
-                <button type="submit" class="main__form__button main__form__button--bottombutton">Sign Up</button>
+                      <div class="popup">
+                      <span class="popuptext" id="myPopup">
+                        <p>Password must contain the following:</p>
+                        <p id="letter" class="wrongpw">A <b>lowercase</b> letter</p>
+                        <p id="capital" class="wrongpw">A <b>capital (uppercase)</b> letter</p>
+                        <p id="number" class="wrongpw">A <b>number</b></p>
+                        <p id="length" class="wrongpw">Minimum <b>8 characters</b></p>
+                      </span>
+                      </div>
+
+                <button type="submit" class="main__form__button main__form__button--bottombutton">Create Your Account</button>
                 
               </form>
 
-              <div id="pw__message">
-                <p>Password must contain the following:</p>
-                <p id="letter" class="invalidpw">A <b>lowercase</b> letter</p>
-                <p id="capital" class="invalidpw">A <b>capital (uppercase)</b> letter</p>
-                <p id="number" class="invalidpw">A <b>number</b></p>
-                <p id="length" class="invalidpw">Minimum <b>8 characters</b></p>
-              </div>
+             
 
               <p class="main__form--terms">By creating an account, you agree to our <span>Terms of Service </span> and have read and understood the <span>Privacy Policy</span></p>
 
             </div>
 
+            
            
 
         </div>

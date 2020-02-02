@@ -82,7 +82,8 @@ var length = document.getElementById("length");
 
 // When the user clicks on the password field, show the message box
 myInput.onfocus = function() {
-    document.getElementById("pw__message").style.display = "block";
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
   }
   
   // When the user clicks outside of the password field, hide the message box
@@ -95,49 +96,51 @@ myInput.onfocus = function() {
     // Validate lowercase letters
     var lowerCaseLetters = /[a-z]/g;
     if(myInput.value.match(lowerCaseLetters)) {
-      letter.classList.remove("invalidpw");
-      letter.classList.add("validpw");
+      letter.classList.remove("wrongpw");
+      letter.classList.add("validpassw");
     } else {
-      letter.classList.remove("validpw");
-      letter.classList.add("invalidpw");
+      letter.classList.remove("validpassw");
+      letter.classList.add("wrongpw");
   }
   
     // Validate capital letters
     var upperCaseLetters = /[A-Z]/g;
     if(myInput.value.match(upperCaseLetters)) {
-      capital.classList.remove("invalidpw");
-      capital.classList.add("validpw");
+      capital.classList.remove("wrongpw");
+      capital.classList.add("validpassw");
     } else {
-      capital.classList.remove("validpw");
-      capital.classList.add("invalidpw");
+      capital.classList.remove("validpassw");
+      capital.classList.add("wrongpw");
     }
   
     // Validate numbers
     var numbers = /[0-9]/g;
     if(myInput.value.match(numbers)) {
-      number.classList.remove("invalidpw");
-      number.classList.add("validpw");
+      number.classList.remove("wrongpw");
+      number.classList.add("validpassw");
     } else {
-      number.classList.remove("validpw");
-      number.classList.add("invalidpw");
+      number.classList.remove("validpassw");
+      number.classList.add("wrongpw");
     }
   
     // Validate length
     if(myInput.value.length >= 8) {
-      length.classList.remove("invalidpw");
-      length.classList.add("validpw");
+      length.classList.remove("wrongpw");
+      length.classList.add("validpassw");
     } else {
-      length.classList.remove("validpw");
-      length.classList.add("invalidpw");
+      length.classList.remove("validpassw");
+      length.classList.add("wrongpw");
     }
   }
 
-
-  function showPassword() {
+  function togglePassword() {
     var x = document.getElementById("password");
     if (x.type === "password") {
       x.type = "text";
     } else {
       x.type = "password";
     }
+
+   
   }
+

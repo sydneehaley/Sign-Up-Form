@@ -4422,36 +4422,43 @@ readers do not read off random characters that represent icons */
 /* Theme Colors */
 /* Font: Families, Sizes & Weights */
 body {
-  background: #f2f2f2;
-  /* fallback for old browsers */
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: white;
   font-size: 16px;
   font-family: "Libre Franklin", sans-serif;
   color: #000; }
 
 /* Containers */
+.bg-image {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  background-image: url("file:///Users/sydneehaley/Desktop/Sign-Up-Form/images/girlwithflower.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh; }
+
 .main {
   display: grid;
   grid-gap: 0px;
-  grid-template-columns: 100%;
+  grid-template-columns: 50% 50%;
   font-family: "Libre Franklin", sans-serif;
-  padding: 11% 33.3%;
+  background: orange;
+  z-index: 2;
+  height: 100vh;
   background: transparent;
-  align-content: center;
-  justify-content: center; }
+  width: 100vw;
+  margin: -1%; }
 
 .main__blurb {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  background: #74ebd5;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #ACB6E5, #74ebd5);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #ACB6E5, #74ebd5);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: url("file:///Users/sydneehaley/Desktop/Sign-Up-Form/images/girlwithflower.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
+  z-index: 3;
   font-size: 16px;
   padding: 6%; }
 
@@ -4460,27 +4467,30 @@ body {
   flex-direction: column;
   justify-content: center;
   font-size: 16px;
-  box-shadow: 2px 0px 18px #e7e4e4;
   background: white;
   font-weight: 300;
   color: #a3a3a3;
-  padding: 3rem; }
+  padding: 1rem 7rem;
+  font-weight: 300;
+  height: 100vh; }
 
 .main__rightcolumn p {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   margin-bottom: 1.5rem;
-  text-align: center; }
+  text-align: left;
+  font-weight: 400;
+  color: #313131; }
 
 /* Headers */
 h1 {
   line-height: 1em;
   font-family: "Libre Franklin", sans-serif;
   font-weight: 100;
-  font-size: 2.5em;
-  font-weight: 300;
+  font-size: 1.5em;
+  font-weight: 700;
   color: #313131;
   margin-bottom: 0rem;
-  text-align: center; }
+  text-align: left; }
 
 /* Specific Text Styles */
 p.main__form--terms {
@@ -4489,7 +4499,9 @@ p.main__form--terms {
   font-size: 0.8rem;
   font-weight: 400;
   font-family: "Libre Franklin", sans-serif;
-  color: #c2c2c2; }
+  color: #c2c2c2;
+  text-align: center;
+  line-height: 16px; }
 
 .main__form--terms span {
   font-weight: 400;
@@ -4512,27 +4524,35 @@ input {
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 15px;
-  padding: 1rem 1.5rem 0.6rem 0rem;
-  border: none;
-  border-bottom: 1px #c2c2c2 solid;
+  padding: 1rem 1.5rem 1rem 1rem;
+  border: 1px #c2c2c2 solid;
+  border-radius: 7px;
   outline: none;
   font-size: 0.8rem;
   font-weight: 300;
-  color: #c2c2c2; }
+  color: #313131; }
 
 input::placeholder {
   color: #c2c2c2; }
 
-input:focus.main__form__input {
-  border: 1px #3e3c49 solid;
-  outline: none;
-  color: #000; }
+input:focus.input-field {
+  margin-bottom: 13px;
+  text-align: left;
+  background: rgba(238, 238, 238, 0.918);
+  padding: 1.5rem;
+  color: #a3a3a3; }
 
 input:focus:invalid.main__form__input {
   outline: none; }
 
 .input-field {
   position: relative; }
+
+.input-field p {
+  font-size: .8rem;
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: .5rem; }
 
 .input-field span {
   /*setting alpha = 0.6*/
@@ -4584,17 +4604,17 @@ input:focus:invalid.main__form__input {
   text-align: left;
   line-height: 0px; }
 
-.validpw {
+.validpassw {
   color: #38cc8c; }
 
-.validpw:before {
+.validpassw:before {
   position: relative;
   content: "✔ "; }
 
-.invalidpw {
+.wrongpw {
   color: #ff7a7a; }
 
-.invalidpw:before {
+.wrongpw:before {
   position: relative;
   content: "✖ ";
   color: #ff7a7a; }
@@ -4602,7 +4622,7 @@ input:focus:invalid.main__form__input {
 #showPassword {
   position: absolute;
   right: 0px;
-  top: 15px;
+  top: 0px;
   border: none;
   height: 20px;
   width: 20px;
@@ -4611,18 +4631,76 @@ input:focus:invalid.main__form__input {
   outline: none;
   text-align: center;
   font-weight: bold;
-  padding: 2px; }
+  margin-right: .3rem; }
 
 button:hover {
   cursor: pointer; }
 
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 263px;
+  background-color: white;
+  border: #a3a3a3 1px solid;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 1rem 1rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 5rem;
+  left: -4rem;
+  margin-left: -80px; }
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  background: white;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #a3a3a3 transparent transparent transparent; }
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s; }
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 .main__form__button--bottombutton {
-  background: #e6e6e6;
+  background: #99cc6e;
   box-sizing: border-box;
+  border-radius: 7px;
   margin-top: 1rem;
   padding: 1rem 1rem;
   font-family: "Libre Franklin", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
-  color: #a3a3a3; }
+  color: white; }
