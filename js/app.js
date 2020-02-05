@@ -7,6 +7,7 @@ const password = document.getElementById('password');
 const cfpassword = document.getElementById('confrmpassword');
 
 
+
 form.addEventListener('submit', function(event){
     
     event.preventDefault();
@@ -28,7 +29,7 @@ form.addEventListener('submit', function(event){
     if (email.value === '') {
         makeError(email,'This field is required.');
         changePlaceholder();
-    } else if(isEmail(email.value) === false) {
+    } else if(correctEmail(email.value) === false) {
         makeError();
     } 
     else {
@@ -40,7 +41,12 @@ form.addEventListener('submit', function(event){
     } else {
         makeSuccess(password)
     }
-})
+
+    if(cfpassword.value == password.value) {
+        makeSuccess(cfpassword)}
+        else{
+          makeError(cfpassword,'Password do not match.')}
+  })
 
 
 function makeError(input, err) {
@@ -166,44 +172,10 @@ myInput.onfocus = function() {
    
   }
 
-  function validatePass(input, err) {
-    const inputBlock = input.parentElement;
-    const small = inputBlock.querySelector('span');
-    inputBlock.className = 'input-field invalid';
-    input.placeholder = '';
-    small.innerText = err;
-}
-
-function validpwSuccess(input) {
-  const inputContainer = input.parentElement;
-  inputContainer.className = 'input-field'; 
-}
-
-
-  // Function to check Whether both passwords 
-            // is same or not. 
-            function checkPassword(form) { 
-              password1 = form.password1.value; 
-              password2 = form.confrmpassword.value; 
-
+  
+               
              
-                    
-              // If confirm password not entered 
-              if (password2 == '') {
-              validatePass(cfpassword,'Please confirm your password.');}
-              else {
-                validpwSuccess(password);
-            }
-                    
-              // If Not same return False.     
-              if (password1 != password2) {
-                validatePass(cfpassword,'Password does not match.');} 
-                  else {
-                    validpwSuccess(password);
-                }
-              } 
-
-          // If passwords match     
-          if (password1 === password2) {
-            validpwSuccess(password);} 
-          
+                  
+            
+                
+                
