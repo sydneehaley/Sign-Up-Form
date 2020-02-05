@@ -13,7 +13,11 @@
   
     <div class="main">
        
-      <div class="main__blurb"> content </div>
+      <div class="main__blurb"> 
+        <svg height="100" width="100">
+        <circle cx="25" cy="25" r="25" fill="#fff" />
+      </svg> 
+    </div>
 
         <div class="main__rightcolumn">
 
@@ -21,7 +25,7 @@
             <p>Already have an account? <a href="">Sign in.</a></p>
 
         
-                <form id="main__form">
+                <form id="main__form" onSubmit="checkPassword(this)">
                     <div class="input-field">
                       <p>First Name</p>
                       <input type="text" name="first-name"  aria-label="first name" id="first-name">
@@ -39,21 +43,31 @@
                     </div>
                     <div class="input-field">
                       <p>Password</p>
-                      <button id="showPassword" onclick="togglePassword()"><i class="far fa-eye"></i></button>
-                      <input type="password" name="password" aria-label="password" id="password" class="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"> 
+                      <button type="button" id="showPassword" onclick="togglePassword()"><i class="far fa-eye"></i></button>
+                      <input type="password" name="password1" aria-label="password" id="password" class="password" type="password"> 
                       <span>Error message</span>
 
                       </div>
 
+                      <div class="input-field">
+                        <p>Confirm Password</p>
+                        <button type="button" id="showPassword" onclick="togglecPassword()"><i class="far fa-eye"></i></button>
+                        <input type="password" name="confrmpassword" aria-label="password" id="confrmpassword" class="password" type="password"> 
+                        <span>Error message</span>
+  
+                        </div>
+
                       <div class="popup">
-                      <span class="popuptext" id="myPopup">
-                        <p>Password must contain the following:</p>
-                        <p id="letter" class="wrongpw">A <b>lowercase</b> letter</p>
-                        <p id="capital" class="wrongpw">A <b>capital (uppercase)</b> letter</p>
-                        <p id="number" class="wrongpw">A <b>number</b></p>
-                        <p id="length" class="wrongpw">Minimum <b>8 characters</b></p>
+                      <span class="popuptext" id="popupBox">
+                        
+                        <p id="letter" class="wrongpw">Password must contain a <b>lowercase</b> letter.</p>
+                        <p id="capital" class="wrongpw">Password must contain a <b>capital (uppercase)</b> letter</p>
+                        <p id="number" class="wrongpw">Password must contain a <b>number</b></p>
+                        <p id="length" class="wrongpw">Password must contain <b>8 characters</b></p>
                       </span>
                       </div>
+
+                      
 
                 <button type="submit" class="main__form__button main__form__button--bottombutton">Create Your Account</button>
                 

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* Sign Up Form Project */
 /* Font Imports */
 @import url("https://use.typekit.net/cng1fua.css");
@@ -4535,11 +4534,11 @@ input {
 input::placeholder {
   color: #c2c2c2; }
 
-input:focus.input-field {
+input:focus {
   margin-bottom: 13px;
   text-align: left;
   background: rgba(238, 238, 238, 0.918);
-  padding: 1.5rem;
+  padding: 1rem 1.5rem 1rem 1rem;
   color: #a3a3a3; }
 
 input:focus:invalid.main__form__input {
@@ -4556,7 +4555,6 @@ input:focus:invalid.main__form__input {
 
 .input-field span {
   /*setting alpha = 0.6*/
-  background: rgba(253, 194, 194, 0.918);
   color: #ff0000;
   display: none;
   width: 100%;
@@ -4564,9 +4562,7 @@ input:focus:invalid.main__form__input {
   margin-top: .5rem; }
 
 .input-field.invalid span {
-  background: rgba(253, 194, 194, 0.918);
   display: contents;
-  padding: .3rem;
   width: 100%;
   box-sizing: border-box;
   margin-top: .5rem;
@@ -4575,15 +4571,21 @@ input:focus:invalid.main__form__input {
 .input-field.invalid {
   margin-bottom: 13px;
   text-align: left;
-  background: rgba(238, 238, 238, 0.918);
-  padding: 1.5rem;
+  margin-bottom: 1.2rem;
   color: #a3a3a3; }
 
 .invalid input {
-  border: none;
-  border-bottom: 1px #c2c2c2 solid;
-  color: #a3a3a3;
-  margin-bottom: .5rem; }
+  font-family: "Libre Franklin", sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: .3rem;
+  padding: 1rem 1.5rem 1rem 1rem;
+  border: 1px #c2c2c2 solid;
+  border-radius: 7px;
+  outline: none;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #313131; }
 
 .main__form__button {
   width: 100%;
@@ -4604,19 +4606,43 @@ input:focus:invalid.main__form__input {
   text-align: left;
   line-height: 0px; }
 
-.validpassw {
-  color: #38cc8c; }
+#letter.validpassw {
+  color: #38cc8c;
+  line-height: 1rem; }
+
+#capital.validpassw {
+  color: #38cc8c;
+  line-height: 1rem; }
+
+#number.validpassw {
+  color: #38cc8c;
+  line-height: 1rem; }
+
+#length.validpassw {
+  color: #38cc8c;
+  line-height: 1rem; }
 
 .validpassw:before {
   position: relative;
-  content: "✔ "; }
+  font-size: 1rem;
+  line-height: 1rem; }
 
-.wrongpw {
+#letter.wrongpw {
+  color: #ff7a7a; }
+
+#capital.wrongpw {
+  color: #ff7a7a; }
+
+#number.wrongpw {
+  color: #ff7a7a; }
+
+#length.wrongpw {
   color: #ff7a7a; }
 
 .wrongpw:before {
   position: relative;
-  content: "✖ ";
+  font-size: 1rem;
+  line-height: 1rem;
   color: #ff7a7a; }
 
 #showPassword {
@@ -4650,15 +4676,19 @@ button:hover {
 .popup .popuptext {
   visibility: hidden;
   width: 263px;
+  height: 13rem;
   background-color: white;
-  border: #a3a3a3 1px solid;
-  color: #fff;
-  text-align: center;
+  font-size: .8rem;
+  font-weight: 700;
+  box-shadow: 1px 5px 14px #b6b6b6;
+  color: #000;
+  text-align: left;
   border-radius: 6px;
+  line-height: 1rem;
   padding: 1rem 1rem;
   position: absolute;
   z-index: 1;
-  bottom: 5rem;
+  bottom: 11rem;
   left: -4rem;
   margin-left: -80px; }
 
@@ -4666,13 +4696,12 @@ button:hover {
 .popup .popuptext::after {
   content: "";
   position: absolute;
-  background: white;
   top: 100%;
   left: 50%;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #a3a3a3 transparent transparent transparent; }
+  border-color: #fff transparent transparent transparent; }
 
 /* Toggle this class - hide and show the popup */
 .popup .show {
@@ -4692,6 +4721,9 @@ button:hover {
     opacity: 0; }
   to {
     opacity: 1; } }
+
+.popup.popuptext span {
+  font-weight: 700; }
 
 .main__form__button--bottombutton {
   background: #99cc6e;

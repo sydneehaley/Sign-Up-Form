@@ -4,7 +4,7 @@ const firstName = document.getElementById('first-name');
 const lastName = document.getElementById('last-name');
 const email = document.getElementById('email-address');
 const password = document.getElementById('password');
-
+const cfpassword = document.getElementById('confrmpassword');
 
 
 form.addEventListener('submit', function(event){
@@ -35,7 +35,7 @@ form.addEventListener('submit', function(event){
         makeSuccess(email);
     }
     if(password.value === '') {
-        makeError(password,'This field is required.');
+        makeError(password,'Please create an password.');
         changePlaceholder();
     } else {
         makeSuccess(password)
@@ -51,6 +51,10 @@ function makeError(input, err) {
     small.innerText = err;
 }
 
+function makeSuccess(input) {
+  const inputContainer = input.parentElement;
+  inputContainer.className = 'input-field'; 
+}
 
    function changePlaceholder(){
     var fnameph = document.getElementById('first-name').placeholder = "Please provide your first name";
@@ -59,10 +63,7 @@ function makeError(input, err) {
     var pwph = document.getElementById('password').placeholder = "Please create a password";
 
   }
-function makeSuccess(input) {
-    const inputContainer = input.parentElement;
-    inputContainer.className = 'input-field'; 
-}
+
 
 function correctEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -80,16 +81,16 @@ var capital = document.getElementById("capital");
 var number = document.getElementById("number");
 var length = document.getElementById("length");
 
+
+
 // When the user clicks on the password field, show the message box
 myInput.onfocus = function() {
-  var popup = document.getElementById("myPopup");
+  var popup = document.getElementById("popupBox");
   popup.classList.toggle("show");
+ 
   }
   
-  // When the user clicks outside of the password field, hide the message box
-  myInput.onblur = function() {
-    document.getElementById("pw__message").style.display = "none";
-  }
+ 
   
   // When the user starts to type something inside the password field
   myInput.onkeyup = function() {
@@ -133,6 +134,16 @@ myInput.onfocus = function() {
     }
   }
 
+
+
+  
+
+
+
+
+
+
+
   function togglePassword() {
     var x = document.getElementById("password");
     if (x.type === "password") {
@@ -144,3 +155,55 @@ myInput.onfocus = function() {
    
   }
 
+  function togglecPassword() {
+    var x = document.getElementById("confrmpassword");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+
+   
+  }
+
+  function validatePass(input, err) {
+    const inputBlock = input.parentElement;
+    const small = inputBlock.querySelector('span');
+    inputBlock.className = 'input-field invalid';
+    input.placeholder = '';
+    small.innerText = err;
+}
+
+function validpwSuccess(input) {
+  const inputContainer = input.parentElement;
+  inputContainer.className = 'input-field'; 
+}
+
+
+  // Function to check Whether both passwords 
+            // is same or not. 
+            function checkPassword(form) { 
+              password1 = form.password1.value; 
+              password2 = form.confrmpassword.value; 
+
+             
+                    
+              // If confirm password not entered 
+              if (password2 == '') {
+              validatePass(cfpassword,'Please confirm your password.');}
+              else {
+                validpwSuccess(password);
+            }
+                    
+              // If Not same return False.     
+              if (password1 != password2) {
+                validatePass(cfpassword,'Password does not match.');} 
+                  else {
+                    validpwSuccess(password);
+                }
+              } 
+
+          // If passwords match     
+          if (password1 === password2) {
+            validpwSuccess(password);} 
+          
