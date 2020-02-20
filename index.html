@@ -7,84 +7,81 @@
     <title>Sign-Up Form</title>
     <link rel="stylesheet" href="./public/css/main.css" />
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css" />
+    <link rel="stylesheet" href="./node_modules/fr-tooltip/tooltip.css" />
 </head>
 <body>
 
-  
+ <div class="bg-upper">
     <div class="main">
        
-      <div class="main__blurb"> 
-        <svg height="100" width="100">
-        <circle cx="25" cy="25" r="25" fill="#fff" />
-      </svg> 
-    </div>
+      
 
         <div class="main__rightcolumn">
 
-            <h1>Create An Account</h1>
-            <p>Already have an account? <a href="">Sign in.</a></p>
+        
 
+            <h1>Create An Account</h1>
+            
+
+            
         
                 <form id="main__form" onSubmit="checkPassword(this)">
-                    <div class="input-field">
+                    <div id="first" class="input-field">
                       <p>First Name</p>
-                      <input type="text" name="first-name"  aria-label="first name" id="first-name">
-                      <span>Error message</span>
+                      <input type="text" name="first-name" aria-label="first name" id="first-name">
+                      <span><i class="fas fa-exclamation-triangle"></i>Error message</span>
                     </div>
-                    <div class="input-field">
+                    <div id="last" class="input-field">
                       <p>Last Name</p>
                       <input type="text" name="last-name"  aria-label="second name" id="last-name">
-                      <span>Error message</span>
+                      <span><i class="fas fa-exclamation-triangle"></i>Error message</span>
                     </div>
-                    <div class="input-field">
+                    <div id="emaili" class="input-field">
                       <p>Email Address</p>
                       <input type="text" name="email-address"  aria-label="email address" id="email-address">
-                      <span>Error message</span>
+                      <span><i class="fas fa-exclamation-triangle"></i>Error message</span>
                     </div>
-                    <div class="input-field">
+                    <div id="passwordi" class="input-field">
                       <p>Password</p>
-                      <button type="button" id="showPassword" onclick="togglePassword()"><i class="far fa-eye"></i></button>
-                      <input type="password" name="password" aria-label="password" id="password" class="password" type="password"> 
-                      <span>Error message</span>
+                      <button type="button" id="showPassword" onclick="togglePassword()"><i class="fas fa-eye-slash"></i></button>
+                      <input type="password" name="password"  aria-label="password" id="password" class="password" type="password"> 
+                      <span> <i class="fas fa-exclamation-triangle"></i>Error message</span>
 
                       </div>
 
-                      <div class="input-field">
+                      <div id="cfpasswordi" class="input-field">
                         <p>Confirm Password</p>
-                        <button type="button" id="showPassword" onclick="togglecPassword()"><i class="far fa-eye"></i></button>
+                        <button type="button" id="showPassword" onclick="togglecPassword()"><i class="fas fa-eye-slash"></i></button>
                         <input type="password" name="confrmpassword" aria-label="password" id="confrmpassword" class="password" type="password"> 
-                        <span>Error message</span>
-  
+                        <span>Error message</span></div>
+
+
+                        
+                        <div id="passwordvalidity">
+                          <p id="letter" class="wrongpw">Password must contain a <b>lowercase</b> letter.</p>
+                          <p id="capital" class="wrongpw">Password must contain an <b>uppercase</b> letter</p>
+                          <p id="number" class="wrongpw">Password must contain a <b>number</b></p>
+                          <p id="length" class="wrongpw">Password must contain <b>8 characters</b></p>
                         </div>
 
-                      <div class="popup">
-                      <span class="popuptext" id="popupBox">
-                        
-                        <p id="letter" class="wrongpw">Password must contain a <b>lowercase</b> letter.</p>
-                        <p id="capital" class="wrongpw">Password must contain a <b>capital (uppercase)</b> letter</p>
-                        <p id="number" class="wrongpw">Password must contain a <b>number</b></p>
-                        <p id="length" class="wrongpw">Password must contain <b>8 characters</b></p>
-                      </span>
-                      </div>
+                        <button type="submit" class="main__form__button main__form__button--bottombutton">Create Your Account</button>
+                
+                      </form>
+
+                    
+
+                        </div>
 
                       
 
-                <button type="submit" class="main__form__button main__form__button--bottombutton">Create Your Account</button>
-                
-              </form>
+                        
 
-             
-
-              <p class="main__form--terms">By creating an account, you agree to our <span>Terms of Service </span> and have read and understood the <span>Privacy Policy</span></p>
-
-            </div>
-
-            
-           
-
+                  
         </div>
+      </div>
       
-        <script src="./js/app.js"></script>
+        <script src="./public/js/app.js"></script>
+        <script src="./node_modules/fr-tooltip/tooltip.js"></script>
 </body>
 </html>
 

@@ -6,7 +6,16 @@ const email = document.getElementById('email-address');
 const password = document.getElementById('password');
 const cfpassword = document.getElementById('confrmpassword');
 
+const pwletter = document.getElementById("letter");
+const pwcapital = document.getElementById("capital");
+const pwnumber = document.getElementById("number");
+const pwlength = document.getElementById("length");
 
+const lowerCaseLetters = /[a-z]/g;
+const upperCaseLetters = /[A-Z]/g;
+const numbers = /[0-9]/g;
+
+const popup =  document.getElementById("popupBox");
 
 form.addEventListener('submit', function(event){
     
@@ -81,74 +90,70 @@ function correctEmail(email) {
 
 
 
-var myInput = document.getElementById("password");
-var letter = document.getElementById("letter");
-var capital = document.getElementById("capital");
-var number = document.getElementById("number");
-var length = document.getElementById("length");
+
 
 
 
 // When the user clicks on the password field, show the message box
-myInput.onfocus = function() {
-  var popup = document.getElementById("popupBox");
-  popup.classList.toggle("show");
- 
-  }
+
   
- 
+password.onfocus = function popupPassword(){ 
+  
+   popup.classList.toggle("show");}
+  
+
+  
+
+
   
   // When the user starts to type something inside the password field
-  myInput.onkeyup = function() {
+  password.onkeyup = function passwordValidity() {
     // Validate lowercase letters
-    var lowerCaseLetters = /[a-z]/g;
-    if(myInput.value.match(lowerCaseLetters)) {
-      letter.classList.remove("wrongpw");
-      letter.classList.add("validpassw");
+  
+    if(password.value.match(lowerCaseLetters)) {
+      pwletter.classList.remove("wrongpw");
+      pwletter.classList.add("validpassw");
     } else {
-      letter.classList.remove("validpassw");
-      letter.classList.add("wrongpw");
+      pwletter.classList.remove("validpassw");
+      pwletter.classList.add("wrongpw");
   }
   
     // Validate capital letters
-    var upperCaseLetters = /[A-Z]/g;
-    if(myInput.value.match(upperCaseLetters)) {
-      capital.classList.remove("wrongpw");
-      capital.classList.add("validpassw");
+    
+    if(password.value.match(upperCaseLetters)) {
+      pwcapital.classList.remove("wrongpw");
+      pwcapital.classList.add("validpassw");
     } else {
-      capital.classList.remove("validpassw");
-      capital.classList.add("wrongpw");
+      pwcapital.classList.remove("validpassw");
+      pwcapital.classList.add("wrongpw");
     }
   
     // Validate numbers
-    var numbers = /[0-9]/g;
-    if(myInput.value.match(numbers)) {
-      number.classList.remove("wrongpw");
-      number.classList.add("validpassw");
+    
+    if(password.value.match(numbers)) {
+      pwnumber.classList.remove("wrongpw");
+      pwnumber.classList.add("validpassw");
     } else {
-      number.classList.remove("validpassw");
-      number.classList.add("wrongpw");
+      pwnumber.classList.remove("validpassw");
+      pwnumber.classList.add("wrongpw");
     }
   
     // Validate length
-    if(myInput.value.length >= 8) {
-      length.classList.remove("wrongpw");
-      length.classList.add("validpassw");
+    if(password.value.length >= 8) {
+      pwlength.classList.remove("wrongpw");
+      pwlength.classList.add("validpassw");
     } else {
-      length.classList.remove("validpassw");
-      length.classList.add("wrongpw");
+      pwlength.classList.remove("validpassw");
+      pwlength.classList.add("wrongpw");
     }
+  
+
   }
-
-
 
   
 
-
-
-
-
-
+  
+  
 
   function togglePassword() {
     var x = document.getElementById("password");

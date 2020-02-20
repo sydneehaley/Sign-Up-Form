@@ -6,6 +6,7 @@
  * Font Awesome Free 5.12.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
+@import url("https://use.typekit.net/thg3nai.css");
 .fa,
 .fas,
 .far,
@@ -4420,76 +4421,146 @@ readers do not read off random characters that represent icons */
 
 /* Theme Colors */
 /* Font: Families, Sizes & Weights */
+/* Theme Colors */
+/* Font: Families, Sizes & Weights */
 body {
   background-color: white;
   font-size: 16px;
   font-family: "Libre Franklin", sans-serif;
-  color: #000; }
+  color: #000;
+  margin: 0;
+  overflow-x: hidden; }
 
 /* Containers */
-.bg-image {
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
-  background-image: url("file:///Users/sydneehaley/Desktop/Sign-Up-Form/images/girlwithflower.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh; }
+.bg-upper {
+  background: #dad2de;
+  background: linear-gradient(180deg, #dad2de 39%, #ffd31e 39%);
+  z-index: 1;
+  height: 100%; }
+
+.bg-lower {
+  background-color: #fece0c;
+  top: 30vh;
+  z-index: 1;
+  height: 70vh; }
 
 .main {
   display: grid;
   grid-gap: 0px;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: auto;
   font-family: "Libre Franklin", sans-serif;
   background: orange;
   z-index: 2;
   height: 100vh;
   background: transparent;
-  width: 100vw;
-  margin: -1%; }
+  margin: 0;
+  padding: 8% 6%;
+  overflow-x: hidden; }
 
 .main__blurb {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  background-image: url("file:///Users/sydneehaley/Desktop/Sign-Up-Form/images/girlwithflower.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
-  z-index: 3;
-  font-size: 16px;
-  padding: 6%; }
+  background: transparent; }
 
 .main__rightcolumn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  width: 34%;
   font-size: 16px;
   background: white;
   font-weight: 300;
   color: #a3a3a3;
-  padding: 1rem 7rem;
-  font-weight: 300;
-  height: 100vh; }
+  margin: auto;
+  border-radius: 7px;
+  padding: 4% 4%; }
+
+@media (max-width: 414px) {
+  .main {
+    display: grid;
+    grid-gap: 0px;
+    grid-template-rows: 65% 41%;
+    grid-template-columns: 100%;
+    flex-direction: row;
+    font-family: "Libre Franklin", sans-serif;
+    background: orange;
+    z-index: 2;
+    background: transparent;
+    margin: 0; } }
+
+@media (max-width: 414px) {
+  .main__blurb {
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-image: url("file:///Users/sydneehaley/Desktop/Sign-Up-Form/images/prince-akachi-1x1-mobile-portrait.jpg");
+    background-position: left top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 15%;
+    height: 414px; } }
+
+@media (max-width: 414px) {
+  .main__rightcolumn {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    font-size: 16px;
+    background: transparent;
+    font-weight: 300;
+    color: #a3a3a3;
+    margin: auto;
+    padding: auto;
+    font-weight: 300;
+    height: 100vh; } }
+
+@media (max-width: 414px) {
+  #mobile.mobile_hide i {
+    display: none; } }
 
 .main__rightcolumn p {
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-bottom: 1.5rem;
   text-align: left;
   font-weight: 400;
   color: #313131; }
 
+@media (max-width: 414px) {
+  .main__rightcolumn p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 400;
+    color: #313131; } }
+
+.main__thirdcolumn {
+  background: transparent; }
+
 /* Headers */
 h1 {
-  line-height: 1em;
   font-family: "Libre Franklin", sans-serif;
   font-weight: 100;
-  font-size: 1.5em;
+  font-size: 2rem;
   font-weight: 700;
+  letter-spacing: -.5px;
+  line-height: 1.5rem;
   color: #313131;
-  margin-bottom: 0rem;
-  text-align: left; }
+  margin-bottom: 1.8rem;
+  text-align: center; }
+
+@media (max-width: 414px) {
+  h1 {
+    font-family: "Libre Franklin", sans-serif;
+    font-weight: 100;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -.5px;
+    line-height: 1.5rem;
+    color: #313131;
+    margin-bottom: 0rem;
+    text-align: center; } }
 
 /* Specific Text Styles */
 p.main__form--terms {
@@ -4507,6 +4578,26 @@ p.main__form--terms {
   font-size: 0.8rem;
   text-decoration: underline; }
 
+a:link {
+  color: #6055a5;
+  font-weight: 700;
+  text-decoration: none; }
+
+a:visited {
+  color: #6055a5;
+  font-weight: 700;
+  text-decoration: none; }
+
+a:hover {
+  color: #3e3c49;
+  font-weight: 700;
+  text-decoration: none; }
+
+a:active {
+  color: #6055a5;
+  font-weight: 700;
+  text-decoration: none; }
+
 /* Form & Buttons */
 #main__form {
   background: transparent;
@@ -4522,11 +4613,11 @@ input {
   font-family: "Libre Franklin", sans-serif;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 15px;
-  padding: 1rem 1.5rem 1rem 1rem;
-  border: 1px #c2c2c2 solid;
-  border-radius: 7px;
-  outline: none;
+  margin-bottom: 8%;
+  border: none;
+  border-bottom: 1px #c2c2c2 solid;
+  /* outline: none; */
+  padding: 1rem 1rem 1rem 0rem;
   font-size: 0.8rem;
   font-weight: 300;
   color: #313131; }
@@ -4534,12 +4625,25 @@ input {
 input::placeholder {
   color: #c2c2c2; }
 
+input::placeholder :before {
+  color: #c2c2c2;
+  content: "\f2bd";
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900; }
+
 input:focus {
-  margin-bottom: 13px;
-  text-align: left;
-  background: rgba(238, 238, 238, 0.918);
-  padding: 1rem 1.5rem 1rem 1rem;
-  color: #a3a3a3; }
+  background: transparent;
+  font-family: "Libre Franklin", sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 8%;
+  border: none;
+  border-bottom: 1px #c2c2c2 solid;
+  outline: none;
+  padding: 1rem 1rem 1rem 0rem;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #313131; }
 
 input:focus:invalid.main__form__input {
   outline: none; }
@@ -4551,18 +4655,56 @@ input:focus:invalid.main__form__input {
   font-size: .8rem;
   text-align: left;
   font-weight: 700;
-  margin-bottom: .5rem; }
+  color: #000;
+  margin-bottom: -2.5rem; }
+
+#last.input-field p:before {
+  content: "\f2bd  ";
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900; }
+
+#first.input-field p:before {
+  content: "\f2bd  ";
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900; }
+
+#emaili.input-field p:before {
+  content: "\f0e0  ";
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900; }
+
+#passwordi.input-field p:before {
+  content: "\f023  ";
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900; }
+
+#cfpasswordi.input-field p:before {
+  content: "\f023  ";
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900; }
 
 .input-field span {
   /*setting alpha = 0.6*/
-  color: #ff0000;
+  color: #ff7a7a;
   display: none;
   width: 100%;
+  font-weight: 700;
   box-sizing: border-box;
   margin-top: .5rem; }
 
 .input-field.invalid span {
   display: contents;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: .5rem;
+  font-weight: 700;
+  font-size: 0.7rem; }
+
+.input-field.invalid span:before {
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  content: "\f071  ";
+  color: #ff7a7a;
   width: 100%;
   box-sizing: border-box;
   margin-top: .5rem;
@@ -4579,8 +4721,8 @@ input:focus:invalid.main__form__input {
   width: 100%;
   box-sizing: border-box;
   margin-bottom: .3rem;
-  padding: 1rem 1.5rem 1rem 1rem;
-  border: 1px #c2c2c2 solid;
+  padding: 1rem 1.3rem 1rem 1rem;
+  border: 1px #ff7a7a solid;
   border-radius: 7px;
   outline: none;
   font-size: 0.8rem;
@@ -4607,48 +4749,74 @@ input:focus:invalid.main__form__input {
   line-height: 0px; }
 
 #letter.validpassw {
-  color: #38cc8c;
-  line-height: 1rem; }
+  color: #c2c2c2;
+  font-weight: 400;
+  font-size: .8rem;
+  margin: 0; }
 
 #capital.validpassw {
-  color: #38cc8c;
-  line-height: 1rem; }
+  color: #c2c2c2;
+  font-weight: 400;
+  font-size: .8rem;
+  margin: 0; }
 
 #number.validpassw {
-  color: #38cc8c;
-  line-height: 1rem; }
+  color: #c2c2c2;
+  font-weight: 400;
+  font-size: .8rem;
+  margin: 0; }
 
 #length.validpassw {
-  color: #38cc8c;
-  line-height: 1rem; }
+  color: #c2c2c2;
+  font-weight: 400;
+  font-size: .8rem;
+  margin: 0; }
 
 .validpassw:before {
+  content: "\f00c  ";
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
   position: relative;
-  font-size: 1rem;
-  line-height: 1rem; }
+  font-size: 0.9rem;
+  color: #38cc8c;
+  margin: 0; }
 
 #letter.wrongpw {
-  color: #ff7a7a; }
+  color: #c2c2c2;
+  font-weight: 400;
+  font-size: .8rem;
+  margin: 0; }
 
 #capital.wrongpw {
-  color: #ff7a7a; }
+  color: #c2c2c2;
+  font-weight: 400;
+  font-size: .8rem;
+  margin: 0; }
 
 #number.wrongpw {
-  color: #ff7a7a; }
+  color: #c2c2c2;
+  font-weight: 400;
+  font-size: .8rem;
+  margin: 0; }
 
 #length.wrongpw {
-  color: #ff7a7a; }
+  color: #c2c2c2;
+  font-weight: 400;
+  font-size: .8rem;
+  margin: 0; }
 
 .wrongpw:before {
   position: relative;
-  font-size: 1rem;
-  line-height: 1rem;
-  color: #ff7a7a; }
+  font-size: 0.85rem;
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  content: "\f00d  ";
+  color: red; }
 
 #showPassword {
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: 14px;
+  top: 1px;
   border: none;
   height: 20px;
   width: 20px;
@@ -4657,7 +4825,19 @@ input:focus:invalid.main__form__input {
   outline: none;
   text-align: center;
   font-weight: bold;
-  margin-right: .3rem; }
+  margin-right: 0rem; }
+
+#passwordvalidity {
+  display: block;
+  background: transparent;
+  font-size: .7rem;
+  color: #c2c2c2;
+  position: relative;
+  padding: 0;
+  margin-top: 10px; }
+
+button {
+  background: transparent; }
 
 button:hover {
   cursor: pointer; }
@@ -4675,33 +4855,42 @@ button:hover {
 /* The actual popup */
 .popup .popuptext {
   visibility: hidden;
-  width: 263px;
-  height: 13rem;
-  background-color: white;
+  display: grid;
+  /* justify-content: center; */
+  align-content: center;
+  width: 18rem;
+  height: 10rem;
+  background-color: #313131;
   font-size: .8rem;
   font-weight: 700;
   box-shadow: 1px 5px 14px #b6b6b6;
   color: #000;
   text-align: left;
+  font-weight: 700;
   border-radius: 6px;
   line-height: 1rem;
-  padding: 1rem 1rem;
+  padding: 0rem 1rem;
+  margin: 8% 12%;
+  line-height: 2rem;
   position: absolute;
   z-index: 1;
-  bottom: 11rem;
-  left: -4rem;
-  margin-left: -80px; }
+  bottom: 23vh; }
+
+.popup .popuptext p {
+  font-size: .8rem; }
 
 /* Popup arrow */
 .popup .popuptext::after {
-  content: "";
+  content: " \f0d7";
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #313131;
   position: absolute;
-  top: 100%;
+  top: 90%;
   left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #fff transparent transparent transparent; }
+  margin-left: -6px;
+  border-width: 5px; }
 
 /* Toggle this class - hide and show the popup */
 .popup .show {
@@ -4722,17 +4911,39 @@ button:hover {
   to {
     opacity: 1; } }
 
-.popup.popuptext span {
-  font-weight: 700; }
-
 .main__form__button--bottombutton {
-  background: #99cc6e;
+  background: #000000;
   box-sizing: border-box;
-  border-radius: 7px;
-  margin-top: 1rem;
+  /* border: 1px solid #c2c2c2; */
+  border-radius: 30px;
+  margin-top: 2rem;
+  width: 100%;
   padding: 1rem 1rem;
   font-family: "Libre Franklin", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  color: #fffcfc; }
+
+.main__form__button--bottombutton:hover {
+  background: #528427;
+  box-sizing: border-box;
+  border-radius: 7px;
+  margin-top: 2rem;
+  width: 100%;
+  padding: 1rem 1rem;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  /* text-transform: uppercase; */
   color: white; }
+
+.main__rightcolumn i {
+  font-size: 3rem;
+  color: #313131;
+  margin-bottom: 6rem; }
+
+.input-field i {
+  font-size: .8rem;
+  color: #c2c2c2;
+  background: transparent; }
