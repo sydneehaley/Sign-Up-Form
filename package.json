@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/sydneehaley/Sign-Up-Form#readme",
   "devDependencies": {
-    "dep-linker": "^1.0.24",
     "node-sass": "^4.13.1",
     "nodemon": "^2.0.2"
   },
