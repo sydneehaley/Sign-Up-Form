@@ -6,72 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign-Up Form</title>
     <link rel="stylesheet" href="./public/css/main.css" />
-    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css" />
-    <link rel="stylesheet" href="./node_modules/fr-tooltip/tooltip.css" />
+    <link rel="stylesheet" href="./public/css/fontawesome-free/css/all.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./public/css/materialize.css" />
+    
 </head>
 <body>
 
  <div class="bg-upper">
-    <div class="main">
+    <div class="main col s12">
        
       
 
         <div class="main__rightcolumn">
 
-        
+       
 
             <h1>Create An Account</h1>
             
 
             
-        
-                <form id="main__form" onSubmit="checkPassword(this)">
-                    <div id="first" class="input-field">
-                      <p>First Name</p>
-                      <input type="text" name="first-name" aria-label="first name" id="first-name">
-                      <span><i class="fas fa-exclamation-triangle"></i>Error message</span>
-                    </div>
-                    <div id="last" class="input-field">
-                      <p>Last Name</p>
-                      <input type="text" name="last-name"  aria-label="second name" id="last-name">
-                      <span><i class="fas fa-exclamation-triangle"></i>Error message</span>
-                    </div>
-                    <div id="emaili" class="input-field">
-                      <p>Email Address</p>
-                      <input type="text" name="email-address"  aria-label="email address" id="email-address">
-                      <span><i class="fas fa-exclamation-triangle"></i>Error message</span>
-                    </div>
-                    <div id="passwordi" class="input-field">
-                      <p>Password</p>
-                      <button type="button" id="showPassword" onclick="togglePassword()"><i class="fas fa-eye-slash"></i></button>
-                      <input type="password" name="password"  aria-label="password" id="password" class="password" type="password"> 
-                      <span> <i class="fas fa-exclamation-triangle"></i>Error message</span>
-
-                      </div>
-
-                      <div id="cfpasswordi" class="input-field">
-                        <p>Confirm Password</p>
-                        <button type="button" id="showPassword" onclick="togglecPassword()"><i class="fas fa-eye-slash"></i></button>
-                        <input type="password" name="confrmpassword" aria-label="password" id="confrmpassword" class="password" type="password"> 
-                        <span>Error message</span></div>
-
-
-                        
-                        <div id="passwordvalidity">
-                          <p id="letter" class="wrongpw">Password must contain a <b>lowercase</b> letter.</p>
-                          <p id="capital" class="wrongpw">Password must contain an <b>uppercase</b> letter</p>
-                          <p id="number" class="wrongpw">Password must contain a <b>number</b></p>
-                          <p id="length" class="wrongpw">Password must contain <b>8 characters</b></p>
-                        </div>
-
-                        <button type="submit" class="main__form__button main__form__button--bottombutton">Create Your Account</button>
+            <form id="form" class="form" novalidate>
+                <input class="fname" id="fname" type="text" name="first name" value="" placeholder="First Name"
+                  aria-label="first name" required>
+                <div id="fnameError" class="error" aria-live="polite">.</div>
+                <input class="lname" id="lname" type="text" name="last name" value="" placeholder="Last Name"
+                  aria-label="last name" required>
+                <div id="lnameError" class="error" aria-live="polite">.</div>
+                <input class="email" id="email" type="email" name="email address" value="" placeholder="Email" aria-label="email"
+                  required>
+                <div id="emailError" class="error" aria-live="polite">.</div>
+                <input class="password" id="pw" type="password" name="password" minlength="8" value="" placeholder="Password"
+                  aria-label="password" required>
+                <div id="pwError" class="error" aria-live="polite">.</div>
+                <button class="main__form__button--bottombutton" id="btn" type="submit" name="submit" aria-label="submit">Create Your Account</button>
                 
-                      </form>
-
-                    
-
-                        </div>
-
+              </form>
                       
 
                         
@@ -79,9 +49,12 @@
                   
         </div>
       </div>
+      </div>
       
-        <script src="./public/js/app.js"></script>
-        <script src="./node_modules/fr-tooltip/tooltip.js"></script>
+      <script src="./public/js/test.js"></script>
+        <script src="./public/js/materialize.js"></script>
+        
+
 </body>
 </html>
 
