@@ -34,7 +34,7 @@ function validateForm(){
     if (firstName.value === ''){
         event.preventDefault();
         firstName.style.borderColor = 'red';
-        firstName.style.background = 'url("images/exclamation-circle-solid.svg") no-repeat 99%';
+        firstName.style.background = 'url("images/times-circle-solid.svg") no-repeat 99%';
         firstName.style.backgroundSize = '6%';
         // display error messages
         fnError.textContent = "Please enter your first name";
@@ -66,7 +66,7 @@ function validateForm(){
     if (lastName.value === ''){
         event.preventDefault();
         lastName.style.borderColor = 'red';
-        lastName.style.background = 'url("images/exclamation-circle-solid.svg") no-repeat 99%';
+        lastName.style.background = 'url("images/times-circle-solid.svg") no-repeat 99%';
         lastName.style.backgroundSize = '6%';
         // display error messages
         lnError.textContent = "Please enter your last name";
@@ -99,7 +99,7 @@ function validateForm(){
 if (email.value === ''){
     event.preventDefault();
     email.style.borderColor = 'red';
-    email.style.background = 'url("images/exclamation-circle-solid.svg") no-repeat 99%';
+    email.style.background = 'url("images/times-circle-solid.svg") no-repeat 99%';
     email.style.backgroundSize = '6%';
     // display error messages
     emError.textContent = "Please enter your email address";
@@ -110,7 +110,7 @@ if (email.value === ''){
 else if (email.value !== emailValid){
     event.preventDefault();
     email.style.borderColor = 'red';
-    email.style.background = 'url("images/exclamation-circle-solid.svg") no-repeat 99%';
+    email.style.background = 'url("images/times-circle-solid.svg") no-repeat 99%';
     email.style.backgroundSize = '6%';
     // display error messages
     emError.textContent = "Please enter an valid email address";
@@ -137,7 +137,7 @@ email.oninput = function () {
 if (password.value === ''){
     event.preventDefault();
     password.style.borderColor = 'red';
-    password.style.background = 'url("images/exclamation-circle-solid.svg") no-repeat 99%';
+    password.style.background = 'url("images/times-circle-solid.svg") no-repeat 99%';
     password.style.backgroundSize = '6%';
     // display error messages
     pwError.textContent = "Please create a password";
@@ -175,7 +175,7 @@ password.oninput = function () {
 if (cfpassword.value === ''){
     event.preventDefault();
     cfpassword.style.borderColor = 'red';
-    cfpassword.style.background = 'url("images/exclamation-circle-solid.svg") no-repeat 99%';
+    cfpassword.style.background = 'url("images/times-circle-solid.svg") no-repeat 99%';
     cfpassword.style.backgroundSize = '6%';
     // display error messages
     cfpwError.textContent = "Please confirm your password";
@@ -186,7 +186,7 @@ if (cfpassword.value === ''){
 else if (cfpassword.value !== password.value) {
     event.preventDefault();
     cfpassword.style.borderColor = 'red';
-    cfpassword.style.background = 'url("images/exclamation-circle-solid.svg") no-repeat 99%';
+    cfpassword.style.background = 'url("images/times-circle-solid.svg") no-repeat 99%';
     cfpassword.style.backgroundSize = '6%';
     cfpassword.style.outline = 'none';
     // display error messages
@@ -203,7 +203,7 @@ else {
     cfpassword.style.backgroundSize = '6%';
     cfpassword.classList.add("successbg")
     // display error messages
-    cfpwError.textContent = "Password meets requirements";
+    cfpwError.textContent = "Password confirmed";
     cfpwError.classList.add("successmsg");
 }
 // reset error state on field input
