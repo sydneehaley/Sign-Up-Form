@@ -26,6 +26,7 @@ const passwValid = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/;
 //email address validation
 const emailValid = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
+const letters = /^[A-Za-z]+$/;
 
 function validateForm(){
 
@@ -38,6 +39,14 @@ function validateForm(){
         // display error messages
         fnError.textContent = "Please enter your first name";
         fnError.classList.add("errormsg");
+    }
+
+    else if(firstName.value.match(letters)){
+        event.preventDefault();
+        firstName.style.borderColor = 'hsl(154, 59%, 51%)';
+        firstName.style.background = 'url("images/check-circle-solid.svg") no-repeat 99%';
+        firstName.style.backgroundSize = '6%';
+        // display error messages
     }
 
     // reset form on submit
@@ -62,6 +71,15 @@ function validateForm(){
         // display error messages
         lnError.textContent = "Please enter your last name";
         lnError.classList.add("errormsg");
+    }
+
+
+    else if(lastName.value.match(letters)){
+        event.preventDefault();
+        lastName.style.borderColor = 'hsl(154, 59%, 51%)';
+        lastName.style.background = 'url("images/check-circle-solid.svg") no-repeat 99%';
+        lastName.style.backgroundSize = '6%';
+        // display error messages
     }
 
     // reset form on submit
@@ -179,9 +197,14 @@ else if (cfpassword.value !== password.value) {
 
 // reset form on submit
 else {
-    cfpwError.textContent = '.';
-    cfpassword.style.borderColor = 'initial';
-    cfpassword.style.background = 'none';
+    event.preventDefault();
+    cfpassword.style.borderColor = 'hsl(154, 59%, 51%)';
+    cfpassword.style.background = 'url("images/check-circle-solid.svg") no-repeat 99%';
+    cfpassword.style.backgroundSize = '6%';
+    cfpassword.classList.add("successbg")
+    // display error messages
+    cfpwError.textContent = "Password meets requirements";
+    cfpwError.classList.add("successmsg");
 }
 // reset error state on field input
 cfpassword.oninput = function () {
@@ -200,19 +223,7 @@ cfpassword.oninput = function () {
 
 form.addEventListener('submit', validateForm);
 
-function valPass(){
-if(cfpassword.value.match(password.value)){
-    event.preventDefault();
-cfpassword.style.borderColor = 'hsl(154, 59%, 51%)';
-cfpassword.style.background = 'url("images/check-circle-solid.svg") no-repeat 99%';
-cfpassword.style.backgroundSize = '6%';
-// display error messages
-cfpwError.textContent = "Password confirmed";
-cfpwError.classList.add("successmsg");
-}
-}
 
-form.addEventListener('submit', valPass);
 
 function valEmail(){
 if (email.value.match(emailValid)){
