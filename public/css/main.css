@@ -7342,15 +7342,16 @@ input {
   box-sizing: border-box;
   margin-bottom: 2%;
   border: none;
-  border-bottom: 1px #c2c2c2 solid;
-  /* outline: none; */
+  border-bottom: 1px #000 solid;
+  outline: none;
   padding: 1rem 1rem 1rem 0rem;
   font-size: 0.8rem;
   font-weight: 300;
   color: #313131; }
 
 input::placeholder {
-  color: #c2c2c2; }
+  color: #000;
+  font-weight: 700; }
 
 input::placeholder :before {
   color: #c2c2c2;
@@ -7366,7 +7367,7 @@ input:focus {
   margin-bottom: 2%;
   border: none;
   border-bottom: 1px #c2c2c2 solid;
-  /* outline: none; */
+  outline: none;
   padding: 1rem 1rem 1rem 0rem;
   font-size: 0.8rem;
   font-weight: 300;
@@ -7685,3 +7686,18 @@ button:hover {
   margin-top: 0px;
   margin-right: 2%;
   margin-bottom: 3%; }
+
+.successmsg {
+  font-size: .7rem;
+  font-weight: 600;
+  color: #38cc8c;
+  text-align: left;
+  margin-top: 0px;
+  margin-right: 2%;
+  margin-bottom: 3%; }
+
+.successbg {
+  background: 'url("images/check-circle-solid.svg") no-repeat 98%';
+  background-size: 6%;
+  border: none;
+  border-bottom: 1px solid #38cc8c; }
