@@ -28,29 +28,53 @@
 
             
             <form id="main-form" class="form" novalidate>
+              <div class="inputcontainer">
+                <div class="form__input-icon"><i class="fas fa-user-circle fa-2x"></i></div>
               <input class="fname" id="fname" type="text" name="First Name" value="" placeholder="First Name"
                 aria-label="first name" required>
               <div id="fnerror" class="error" aria-live="polite">.</div>
+            </div>
+
+            <div class="inputcontainer">
+              <div class="form__input-icon"><i class="fas fa-user-circle fa-2x"></i></div>
               <input class="lname" id="lname" type="text" name="Last Name" value="" placeholder="Last Name"
               aria-label="last name" required>
             <div id="lnerror" class="error" aria-live="polite">.</div>
+          </div>
+
+          <div class="inputcontainer">
+            <div class="form__input-icon"><i class="fas fa-envelope fa-2x"></i></div>
             <input class="email" id="email" type="text" name="email" value="" placeholder="Email Address"
               aria-label="Email Address" required>
             <div id="emerror" class="error" aria-live="polite">.</div>
+          </div>
+
+          <div class="inputcontainer">
+            <div class="form__input-icon"><i class="fas fa-lock fa-2x"></i></div>
             <input class="password" id="pw" type="text" name="password" value="" placeholder="Password"
             aria-label="Password" required>
           <div id="pwerror" class="error" aria-live="polite">.</div>
+        </div>
+
+        <div class="inputcontainer">
+          <div class="form__input-icon"><i class="fas fa-lock fa-2x"></i></div>
           <input class="confirmpassword" id="cfpw" type="text" name="password" value="" placeholder="Confirm Password"
             aria-label="Confirm Password" required>
           <div id="cfpwerror" class="error" aria-live="polite">.</div>
+        </div>
 
 
 
-              <div id="passwordvalidity">
-                <p id="letter" class="wrongpw">Password must contain a <b>lowercase</b> letter.</p>
-                <p id="capital" class="wrongpw">Password must contain an <b>uppercase</b> letter</p>
-                <p id="number" class="wrongpw">Password must contain a <b>number</b></p>
-                <p id="length" class="wrongpw">Password must contain <b>8 characters</b></p>
+              <div id="passwordValidity">
+
+                <p>Password Requirements</p>
+          <ul>
+                <li id="letter" class="wrongpw">Password must contain a <b>lowercase</b> letter.</li>
+                <li id="capital" class="wrongpw">Password must contain an <b>uppercase</b> letter</li>
+                <li id="number" class="wrongpw">Password must contain a <b>number</b></li>
+                <li id="length" class="wrongpw">Password must contain <b>8 characters</b></li>
+
+              </ul>
               </div>
 
 

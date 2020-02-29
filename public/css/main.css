@@ -7153,6 +7153,7 @@ body {
   font-family: "Libre Franklin", sans-serif;
   color: #000;
   margin: 0;
+  font-size: 16px;
   overflow-x: hidden; }
 
 /* Containers */
@@ -7335,43 +7336,32 @@ a:active {
   text-align: center;
   color: #000; }
 
-input {
+input[type=text], select {
   background: transparent;
   font-family: "Libre Franklin", sans-serif;
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 2%;
-  border: none;
-  border-bottom: 1px #000 solid;
+  /* border: none; */
+  border: 1px #c2c2c2 solid;
+  border-radius: 7px;
   outline: none;
-  padding: 1rem 1rem 1rem 0rem;
+  padding: 1rem 1rem 1rem 3.3rem;
   font-size: 0.8rem;
-  font-weight: 300;
+  font-weight: 500;
   color: #313131; }
 
-input::placeholder {
+::-webkit-input-placeholder {
   color: #000;
-  font-weight: 700; }
+  font-weight: 500; }
 
-input::placeholder :before {
-  color: #c2c2c2;
-  content: "\f2bd";
-  font-family: 'Font Awesome\ 5 Free';
-  font-weight: 900; }
+.form__input-icon {
+  position: relative; }
 
-input:focus {
-  background: transparent;
-  font-family: "Libre Franklin", sans-serif;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 2%;
-  border: none;
-  border-bottom: 1px #c2c2c2 solid;
-  outline: none;
-  padding: 1rem 1rem 1rem 0rem;
-  font-size: 0.8rem;
-  font-weight: 300;
-  color: #313131; }
+.form__input-icon i {
+  padding: .7rem;
+  position: absolute;
+  color: #c2c2c2; }
 
 input:focus:invalid.main__form__input {
   outline: none; }
@@ -7478,36 +7468,27 @@ input:focus:invalid.main__form__input {
   line-height: 0px; }
 
 #letter.validpassw {
-  color: #c2c2c2;
-  font-weight: 400;
+  color: #000;
+  font-weight: 500;
   font-size: .8rem;
   margin: 0; }
 
 #capital.validpassw {
-  color: #c2c2c2;
-  font-weight: 400;
+  color: #000;
+  font-weight: 500;
   font-size: .8rem;
   margin: 0; }
 
 #number.validpassw {
-  color: #c2c2c2;
-  font-weight: 400;
+  color: #000;
+  font-weight: 500;
   font-size: .8rem;
   margin: 0; }
 
 #length.validpassw {
-  color: #c2c2c2;
-  font-weight: 400;
+  color: #000;
+  font-weight: 500;
   font-size: .8rem;
-  margin: 0; }
-
-.validpassw:before {
-  content: "\f00c  ";
-  font-family: 'Font Awesome\ 5 Free';
-  font-weight: 900;
-  position: relative;
-  font-size: 0.9rem;
-  color: #38cc8c;
   margin: 0; }
 
 #letter.wrongpw {
@@ -7534,29 +7515,7 @@ input:focus:invalid.main__form__input {
   font-size: .8rem;
   margin: 0; }
 
-.wrongpw:before {
-  position: relative;
-  font-size: 0.85rem;
-  font-family: 'Font Awesome\ 5 Free';
-  font-weight: 900;
-  content: "\f00d  ";
-  color: red; }
-
-#showPassword {
-  position: absolute;
-  right: 14px;
-  top: 1px;
-  border: none;
-  height: 20px;
-  width: 20px;
-  color: #a3a3a3;
-  border-radius: 100%;
-  outline: none;
-  text-align: center;
-  font-weight: bold;
-  margin-right: 0rem; }
-
-#passwordvalidity {
+#passwordValidity {
   display: block;
   background: transparent;
   font-size: .7rem;
@@ -7564,6 +7523,18 @@ input:focus:invalid.main__form__input {
   position: relative;
   padding: 0;
   margin-top: 10px; }
+
+#passwordValidity p {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1%; }
+
+#passwordValidity ul {
+  margin-left: 0%;
+  padding-left: .1%;
+  list-style-type: disc;
+  list-style-position: inside;
+  font-size: 1rem; }
 
 button {
   background: transparent; }
@@ -7667,16 +7638,6 @@ button:hover {
   font-weight: 600;
   /* text-transform: uppercase; */
   color: #fffcfc; }
-
-.main__rightcolumn i {
-  font-size: 3rem;
-  color: #313131;
-  margin-bottom: 6rem; }
-
-.input-field i {
-  font-size: .8rem;
-  color: #c2c2c2;
-  background: transparent; }
 
 .errormsg {
   font-size: .7rem;
