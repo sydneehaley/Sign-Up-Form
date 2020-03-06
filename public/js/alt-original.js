@@ -26,18 +26,24 @@ const numbers = /[0-9]/g;
 //a password between 8 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter
 const passwValid =  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/;
 //email address validation
-const emailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const emailValid = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 const letters = /^[A-Za-z]+$/;
 
+const fieldIcn = document.querySelector('#firsticon.form__input-icon i');
+const fieldIcnSecond = document.querySelector('#secondicon.form__input-icon i');
+const fieldIcnThird = document.querySelector('#thirdicon.form__input-icon i');
+const fieldIcnFourth = document.querySelector('#fourthicon.form__input-icon--pw i');
+const fieldIcnFifth = document.querySelector('#fifthicon.form__input-icon--pw i');
+const fieldIcnUser = document.querySelector('#usernicon.form__input-icon i');
 
 function validateForm(){
 
 // validation for first name field
     if (firstName.value === ''){
         event.preventDefault();
-        firstName.style.background = 'hsla(0, 100%, 90%, 1)';
-        
+        firstName.style.borderColor = 'hsl(0, 100%, 74%)';
+        fieldIcn.style.color = 'hsl(0, 100%, 74%)';
        
         // display error messages
         fnError.textContent = "Please enter your first name";
@@ -46,8 +52,8 @@ function validateForm(){
 
     else if(firstName.value.match(letters)){
         event.preventDefault();
-        firstName.style.background  = 'hsla(154, 59%, 81%, 1)';
-        
+        firstName.style.borderColor = 'hsl(154, 59%, 51%)';
+        fieldIcn.style.color = 'hsl(154, 59%, 51%)';
 
         // display error messages
     }
@@ -55,21 +61,22 @@ function validateForm(){
     // reset form on submit
     else {
         fnError.textContent = '.';
-        firstName.style.background = '#F1F1F3';
-        
+        firstName.style.borderColor = 'inherit';
+        firstName.style.background = 'none';
     }
     // reset error state on field input
     firstName.oninput = function () {
         fnError.textContent = '.';
-        firstName.style.background = '#F1F1F3';
-        
+        firstName.style.borderColor = 'initial';
+        firstName.style.background = 'none';
+        fieldIcn.style.color = '#c2c2c2';
     }
 
 // validation for last name field
     if (lastName.value === ''){
         event.preventDefault();
-        lastName.style.background = 'hsla(0, 100%, 90%, 1)';
-        
+        lastName.style.borderColor = 'hsl(0, 100%, 74%)';
+        fieldIcnSecond.style.color = 'hsl(0, 100%, 74%)';
         
         // display error messages
         lnError.textContent = "Please Enter Your Last Name";
@@ -79,54 +86,104 @@ function validateForm(){
 
     else if(lastName.value.match(letters)){
         event.preventDefault();
-        lastName.style.background  = 'hsla(154, 59%, 81%, 1)';
-        
+        lastName.style.borderColor = 'hsl(154, 59%, 51%)';
+        fieldIcnSecond.style.color = 'hsl(154, 59%, 51%)';
         // display error messages
     }
 
     // reset form on submit
     else {
         lnError.textContent = '.';
-        lastName.style.background = '#F1F1F3';
+        lastName.style.borderColor = 'inherit';
+        lastName.style.background = 'none';
     }
     // reset error state on field input
     lastName.oninput = function () {
         lnError.textContent = '.';
-        lastName.style.background = '#F1F1F3';
-        
+        lastName.style.borderColor = 'initial';
+        lastName.style.background = 'none';
+        fieldIcnSecond.style.color = '#c2c2c2';
     }
 
 // validation for email field
 if (email.value === ''){
     event.preventDefault();
-    email.style.background = 'hsla(0, 100%, 90%, 1)';
-    
+    email.style.borderColor = 'hsl(0, 100%, 74%)';
+    fieldIcnThird.style.color = 'hsl(0, 100%, 74%)';
     
     // display error messages
     emError.textContent = "Please Enter Your Email Address";
     emError.classList.add("errormsg");
-    
+    email.placeholder = "youremail@example.com";
+}
+
+else if (email.value !== emailValid){
+    event.preventDefault();
+    email.style.borderColor = 'hsl(0, 100%, 74%)';
+    fieldIcnThird.style.color = 'hsl(0, 100%, 74%)';
+   
+    // display error messages
+    emError.textContent = "Please Enter a Valid Email Address";
+    emError.classList.add("errormsg");
+    email.placeholder = "youremail@example.com";
 }
 
 
-
-
+// reset form on submit
+else {
+    emError.textContent = '.';
+    email.style.borderColor = 'inherit';
+    lastName.style.background = 'none';
+}
 // reset error state on field input
 email.oninput = function () {
     emError.textContent = '.';
-    email.style.background = '#F1F1F3';
-    
+    email.style.borderColor = 'initial';
+    email.style.background = 'none';
+    fieldIcnThird.style.color = '#c2c2c2';
 }
 
 
+// validation for username field
+if (username.value === ''){
+    event.preventDefault();
+    username.style.borderColor = 'hsl(0, 100%, 74%)';
+    fieldIcnUser.style.color = 'hsl(0, 100%, 74%)';
+    
+    // display error messages
+    userError.textContent = "Please Enter an Username";
+    userError.classList.add("errormsg");
+}
 
+
+else if(username.value.match(letters)){
+    event.preventDefault();
+    username.style.borderColor = 'hsl(154, 59%, 51%)';
+    fieldIcnUser.style.color = 'hsl(154, 59%, 51%)';
+    // display error messages
+}
+
+// reset form on submit
+else {
+    userError.textContent = '.';
+    username.style.borderColor = 'inherit';
+    username.style.background = 'none';
+    fieldIcnUser.style.color = '#c2c2c2';
+}
+// reset error state on field input
+username.oninput = function () {
+    userError.textContent = '.';
+    username.style.borderColor = 'initial';
+    username.style.background = 'none';
+    fieldIcnUser.style.color = '#c2c2c2';
+}
 // validation for password field
 
 
 if (password.value.match(passwValid))
 {  event.preventDefault();
-    password.style.background  = 'hsla(154, 59%, 81%, 1)';
-    
+    password.style.borderColor = 'hsl(154, 59%, 51%)';
+    fieldIcnFourth.style.color = 'hsl(154, 59%, 51%)';
 
     
     // display error messages
@@ -137,8 +194,8 @@ if (password.value.match(passwValid))
 
 else 
 {event.preventDefault();
-    password.style.background = 'hsla(0, 100%, 90%, 1)';
-    
+    password.style.borderColor = 'hsl(0, 100%, 74%)';
+    fieldIcnFourth.style.color = 'hsl(0, 100%, 74%)';
    
     // display error messages
     pwError.textContent = "Please Create a Valid Password";
@@ -150,15 +207,16 @@ else
 // reset error state on field input
 password.oninput = function () {
     pwError.textContent = '.';
-    password.style.background = '#F1F1F3';
-    
+    password.style.borderColor = 'initial';
+    password.style.background = 'none';
+    fieldIcnFourth.style.color = '#c2c2c2';
 }
 
 // validation for confirm password field
 if (cfpassword.value === ''){
     event.preventDefault();
-    cfpassword.style.background = 'hsla(0, 100%, 90%, 1)';
-    
+    cfpassword.style.borderColor = 'hsl(0, 100%, 74%)';
+    fieldIcnFifth.style.color = 'hsl(0, 100%, 74%)';
    
     // display error messages
     cfpwError.textContent = "Please Confirm Your Password";
@@ -169,10 +227,10 @@ if (cfpassword.value === ''){
 
 else if (cfpassword.value !== password.value) {
     event.preventDefault();
-    cfpassword.style.background = 'hsla(0, 100%, 90%, 1)';
+    cfpassword.style.borderColor = 'hsl(0, 100%, 74%)';
+    fieldIcnFifth.style.color = 'hsl(0, 100%, 74%)';
     
-    
-    
+    cfpassword.style.outline = 'none';
     // display error messages
     cfpwError.textContent = "Passwords Must Match";
     cfpwError.classList.add("errormsg");
@@ -183,8 +241,8 @@ else if (cfpassword.value !== password.value) {
 // reset form on submit
 else {
     event.preventDefault();
-    cfpassword.style.background  = 'hsla(154, 59%, 81%, 1)';
-   
+    cfpassword.style.borderColor = 'hsl(154, 59%, 51%)';
+    fieldIcnFifth.style.color = 'hsl(154, 59%, 51%)';
 
     cfpassword.classList.add("successbg")
     // display error messages
@@ -195,30 +253,32 @@ else {
 // reset error state on field input
 cfpassword.oninput = function () {
     cfpwError.textContent = '.';
-    cfpassword.style.background = '#F1F1F3';
-
+    cfpassword.style.borderColor = 'initial';
+    cfpassword.style.background = 'none';
+    fieldIcnFifth.style.color = '#c2c2c2';
 }
 
 
 
 }
+
 
 form.addEventListener('submit', validateForm);
 
-function valEmail(){
 
-if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))
-{ event.preventDefault();
-    email.style.background = 'hsla(154, 59%, 81%, 1)';
+
+function valEmail(){
+if (email.value.match(emailValid)){
+    event.preventDefault();
+    email.style.borderColor = 'hsl(154, 59%, 51%)';
+    fieldIconThird.style.color = 'hsl(154, 59%, 51%)';
+    
+    // display error messages
     emError.textContent = ".";
 }
 }
 
 form.addEventListener('submit', valEmail);
-
-
-
-
 
 
 

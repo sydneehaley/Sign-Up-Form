@@ -15,7 +15,7 @@
 <body>
 
  <div class="bg-upper">
-    <div class="main col s12">
+    <div class="main">
        
       
 
@@ -24,57 +24,79 @@
        
 
             <h1>Create An Account</h1>
-            
 
-            
-            <form id="main-form" class="form" novalidate>
-              <div class="inputcontainer">
-                <div class="form__input-icon"><i class="fas fa-user-circle fa-2x"></i></div>
-              <input class="fname" id="fname" type="text" name="First Name" value="" placeholder="First Name"
-                aria-label="first name" required>
-              <div id="fnerror" class="error" aria-live="polite">.</div>
+            <form id="main-form" class="form-inline" novalidate>
+              
+              <div class="row__6">
+              <div class="col-6">
+                <label for="fname">First Name</label>
+                
+                <div class="container__inputfieldtoggle">
+              <input class="fname" id="fname" type="text" name="First Name" value="" 
+                aria-label="first name" required></div>
+              <div id="fnerror" class="error" aria-live="polite"></div>
             </div>
-
-            <div class="inputcontainer">
-              <div class="form__input-icon"><i class="fas fa-user-circle fa-2x"></i></div>
-              <input class="lname" id="lname" type="text" name="Last Name" value="" placeholder="Last Name"
-              aria-label="last name" required>
-            <div id="lnerror" class="error" aria-live="polite">.</div>
+            
+            <div class="col-6">
+              <label for="lname">Last Name</label>
+              <div class="container__inputfieldtoggle">
+              <input class="lname" id="lname" type="text" name="Last Name" value="" 
+              aria-label="last name" required></div>
+            <div id="lnerror" class="error" aria-live="polite"></div>
           </div>
 
-          <div class="inputcontainer">
-            <div class="form__input-icon"><i class="fas fa-envelope fa-2x"></i></div>
-            <input class="email" id="email" type="text" name="email" value="" placeholder="Email Address"
-              aria-label="Email Address" required>
-            <div id="emerror" class="error" aria-live="polite">.</div>
+        </div>
+
+        <div class="row">
+         
+            <label for="email">Email Address</label>
+            <div class="container__inputfieldtoggle">
+            <input class="email" id="email" type="text" name="email" value="" 
+              aria-label="Email Address" required></div>
+            <div id="emerror" class="error" aria-live="polite"></div>
+          
+
+        
           </div>
-
-          <div class="inputcontainer">
-            <div class="form__input-icon"><i class="fas fa-lock fa-2x"></i></div>
-            <input class="password" id="pw" type="text" name="password" value="" placeholder="Password"
-            aria-label="Password" required>
-          <div id="pwerror" class="error" aria-live="polite">.</div>
+          
+          
+          <div class="row">
+            
+              <label for="password">Password</label>
+          <div class="container__passwordtoggle">
+            <input class="password" id="pw" type="password" name="password" value="" 
+            aria-label="Password" required><button type="button" id="togglepw" onclick="togglePassword()"><i class="fas fa-eye-slash"></i></button></div>
+            <div id="pwerror" class="error" aria-live="polite"></div>
+          
         </div>
 
-        <div class="inputcontainer">
-          <div class="form__input-icon"><i class="fas fa-lock fa-2x"></i></div>
-          <input class="confirmpassword" id="cfpw" type="text" name="password" value="" placeholder="Confirm Password"
-            aria-label="Confirm Password" required>
-          <div id="cfpwerror" class="error" aria-live="polite">.</div>
-        </div>
-
+        <div class="row">
+          
+            <label for="confirmpassword">Confirm Password</label>
+            <div class="container__passwordtoggle">
+          <input class="password" id="cfpw" type="password" name="password" value="" 
+            aria-label="Confirm Password" required><button type="button" id="togglepw" onclick="togglecPassword()"> <i class="fas fa-eye-slash"></i></button></div>
+          <div id="cfpwerror" class="error" aria-live="polite"></div>
+        
+        
+      </div>
 
 
               <div id="passwordValidity">
 
-                <p>Password Requirements</p>
-          <ul>
-                <li id="letter" class="wrongpw">Password must contain a <b>lowercase</b> letter.</li>
-                <li id="capital" class="wrongpw">Password must contain an <b>uppercase</b> letter</li>
-                <li id="number" class="wrongpw">Password must contain a <b>number</b></li>
-                <li id="length" class="wrongpw">Password must contain <b>8 characters</b></li>
+              
+              
 
-              </ul>
+
+                
+                  <p>Password Requirements:</p>
+                  <br>Password must contain a <span id="letter" class="wrongpw"><b>lowercase</b></span> letter, an <span id="capital" class="wrongpw"><b>uppercase</b> </span>letter, a <span id="number" class="wrongpw">  <b>number</b></span>,
+                  and at least <span id="length" class="wrongpw"> <b>8 characters</b></span>.
+               
+          
+               
+
+             
               </div>
 
 
