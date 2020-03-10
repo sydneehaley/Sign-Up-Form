@@ -19,6 +19,17 @@ const pwcapital = document.getElementById("capital");
 const pwnumber = document.getElementById("number");
 const pwlength = document.getElementById("length");
 
+const togglePwButton = document.querySelector('#togglepw');
+const toggleCfPwButton = document.querySelector('#togglecfpw');
+
+const toggleButtonPass = document.querySelector('#togglepw button');
+const toggleButtonCon = document.querySelector('#togglecfpw button');
+
+const passSignalLower = document.querySelector('#passvalidicon');
+const passSignalUpper = document.querySelector('#passvalidicon2');
+const passSignalNumber = document.querySelector('#passvalidicon3');
+const passSignalChara = document.querySelector('#passvalidicon4');
+
 const lowerCaseLetters = /[a-z]/g;
 const upperCaseLetters = /[A-Z]/g;
 const numbers = /[0-9]/g;
@@ -97,7 +108,7 @@ function validateForm(){
     }
 
 // validation for email field
-if (email.value === ''){
+if (email.value !== emailValid){
     event.preventDefault();
     email.style.background = 'hsla(0, 100%, 90%, 1)';
     
@@ -126,19 +137,17 @@ email.oninput = function () {
 if (password.value.match(passwValid))
 {  event.preventDefault();
     password.style.background  = 'hsla(154, 59%, 81%, 1)';
-    
+    togglePwButton.style.background = 'hsla(154, 59%, 81%, 1)';
 
-    
     // display error messages
     pwError.textContent = "Password Meets Requirements";
     pwError.classList.add("successmsg");
     pwError.style.color = 'hsl(154, 59%, 51%)';
 }
 
-else 
-{event.preventDefault();
+else {event.preventDefault();
     password.style.background = 'hsla(0, 100%, 90%, 1)';
-    
+    togglePwButton.style.background = 'hsla(0, 100%, 90%, 1)';
    
     // display error messages
     pwError.textContent = "Please Create a Valid Password";
@@ -146,61 +155,12 @@ else
     pwError.style.color = 'hsl(0, 100%, 74%)';
 }
 
-
 // reset error state on field input
 password.oninput = function () {
     pwError.textContent = '.';
     password.style.background = '#F1F1F3';
-    
+    togglePwButton.style.background = '#F1F1F3';
 }
-
-// validation for confirm password field
-if (cfpassword.value === ''){
-    event.preventDefault();
-    cfpassword.style.background = 'hsla(0, 100%, 90%, 1)';
-    
-   
-    // display error messages
-    cfpwError.textContent = "Please Confirm Your Password";
-    cfpwError.classList.add("errormsg");
-    cfpwError.style.color = 'hsl(0, 100%, 74%)';
-    
-}
-
-else if (cfpassword.value !== password.value) {
-    event.preventDefault();
-    cfpassword.style.background = 'hsla(0, 100%, 90%, 1)';
-    
-    
-    
-    // display error messages
-    cfpwError.textContent = "Passwords Must Match";
-    cfpwError.classList.add("errormsg");
-    
-    
-}
-
-// reset form on submit
-else {
-    event.preventDefault();
-    cfpassword.style.background  = 'hsla(154, 59%, 81%, 1)';
-   
-
-    cfpassword.classList.add("successbg")
-    // display error messages
-    cfpwError.textContent = "Password Confirmed";
-    cfpwError.classList.add("successmsg");
-    cfpwError.style.color = 'hsl(154, 59%, 51%)';
-}
-// reset error state on field input
-cfpassword.oninput = function () {
-    cfpwError.textContent = '.';
-    cfpassword.style.background = '#F1F1F3';
-
-}
-
-
-
 }
 
 form.addEventListener('submit', validateForm);
@@ -230,6 +190,8 @@ password.onkeyup = function passwordValidity() {
     if(password.value.match(lowerCaseLetters)) {
       pwletter.classList.remove("wrongpw");
       pwletter.classList.add("validpassw");
+      passSignalLower.style.color = 'hsl(154, 59%, 51%)';
+
     } else {
       pwletter.classList.remove("validpassw");
       pwletter.classList.add("wrongpw");
@@ -240,6 +202,7 @@ password.onkeyup = function passwordValidity() {
     if(password.value.match(upperCaseLetters)) {
       pwcapital.classList.remove("wrongpw");
       pwcapital.classList.add("validpassw");
+      passSignalUpper.style.color = 'hsl(154, 59%, 51%)';
     } else {
       pwcapital.classList.remove("validpassw");
       pwcapital.classList.add("wrongpw");
@@ -250,6 +213,7 @@ password.onkeyup = function passwordValidity() {
     if(password.value.match(numbers)) {
       pwnumber.classList.remove("wrongpw");
       pwnumber.classList.add("validpassw");
+      passSignalNumber.style.color = 'hsl(154, 59%, 51%)';
     } else {
       pwnumber.classList.remove("validpassw");
       pwnumber.classList.add("wrongpw");
@@ -259,6 +223,7 @@ password.onkeyup = function passwordValidity() {
     if(password.value.length >= 8) {
       pwlength.classList.remove("wrongpw");
       pwlength.classList.add("validpassw");
+      passSignalChara.style.color = 'hsl(154, 59%, 51%)';
     } else {
       pwlength.classList.remove("validpassw");
       pwlength.classList.add("wrongpw");
@@ -266,9 +231,13 @@ password.onkeyup = function passwordValidity() {
   
 
   }
+9
+  
 
+  
+togglePwButton.onclick = function() {passwordToggle()};
 
-  function togglePassword() {
+  function passwordToggle() {
     var x = document.getElementById("pw");
     if (x.type === "password") {
       x.type = "text";
@@ -276,16 +245,8 @@ password.onkeyup = function passwordValidity() {
       x.type = "password";
     }
 
-   
   }
 
-  function togglecPassword() {
-    var x = document.getElementById("cfpw");
-    if (x.type === "password") {
-      x.type = "text";
-    } else {
-      x.type = "password";
-    }
+  
 
-   
-  }
+  

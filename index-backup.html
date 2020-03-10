@@ -14,7 +14,7 @@
 </head>
 <body>
 
- 
+ <div class="bg-upper">
     <div class="main">
        
       
@@ -63,34 +63,44 @@
           </div>
           
           
-          <div class="row__nomarginb">
-          <label for="password">Password</label>
+          <div class="row">
+            
+              <label for="password">Password</label>
           <div class="container__passwordtoggle">
             <input class="password" id="pw" type="password" name="password" value="" 
             aria-label="Password" required> <button type="button" id="togglepw"><i class="fas fa-eye-slash"></i></button></div>
             <div id="pwerror" class="error" aria-live="polite"></div>
+          
         </div>
 
-            <div class="row__automargin">
-              <div class="col-6"> 
-              <ul class="passwordreq">
-             
-              <li><i id="passvalidicon" class="fas fa-check-circle"></i><span id="letter" class="wrongpw">One lowercase character</span> </li>
-              <li><i id="passvalidicon2"  class="fas fa-check-circle"></i><span id="capital" class="wrongpw">One uppercase character</span></li>
-              </ul>
-            </div>
+        <div class="row">
+          
+            <label for="confirmpassword">Confirm Password</label>
+            <div class="container__passwordtoggle">
+          <input class="password" id="cfpw" type="password" name="password" value="" 
+            aria-label="Confirm Password" required><button type="button" id="togglecfpw" > <i class="fas fa-eye-slash"></i></button></div>
+          <div id="cfpwerror" class="error" aria-live="polite"></div>
+        
+        
+      </div>
 
-                  <div class="col-6"> 
-                  <ul class="passwordreq2">
-                    <li><i id="passvalidicon3"  class="fas fa-check-circle"></i><span id="number" class="wrongpw">One number</span></li>
-                    <li><i id="passvalidicon4"  class="fas fa-check-circle"></i><span id="length" class="wrongpw">8 characters minimum</span></li>
-                  </ul>
-                  </div>
-                 
-                  
+
+              <div id="passwordValidity">
+
+              
+              
+
+
                 
-                </div>
-            
+                  <p>Password Requirements:</p>
+                  <br>Password must contain a <span id="letter" class="wrongpw"><b>lowercase</b></span> letter, an <span id="capital" class="wrongpw"><b>uppercase</b> </span>letter, a <span id="number" class="wrongpw">  <b>number</b></span>,
+                  and at least <span id="length" class="wrongpw"> <b>8 characters</b></span>.
+               
+          
+               
+
+             
+              </div>
 
 
               <button class="main__form__button--bottombutton" id="btn" type="submit" name="submit" aria-label="submit">Sign Up</button>
@@ -103,7 +113,7 @@
                   
         </div>
       </div>
-     
+      </div>
       
       <script src="./public/js/alt.js"></script>
         

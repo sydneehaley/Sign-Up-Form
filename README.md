@@ -15,5 +15,5 @@ Project materials:
 
 - Font Awesome, Free Version (fontawesome.com): "fa-eye-slash"
 - Google Fonts (fonts.google.com): "Libre Franklin" (300, 400, 500, 600, 700 weights)
-- uiGradients (uigradients.com): "Mild" (#67B26F --> #4ca2cd)
+- uiGradients (uigradients.com): "Socialive" (#06beb6 --> #48b1bf)
 
