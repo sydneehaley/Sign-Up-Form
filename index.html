@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="./public/css/main.css" />
     <link rel="stylesheet" href="./public/css/fontawesome-free/css/all.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
    
     
 </head>
@@ -25,12 +27,9 @@
 
             <h1>Create An Account</h1>
             
-      
-           
-            
             <form id="main-form" class="form-inline" novalidate>
               
-              <div class="row__6">
+              <div class="row">
               <div class="col-6">
                 <label for="fname">First Name</label>
                 
@@ -39,24 +38,30 @@
                 aria-label="first name" required></div>
               <div id="fnerror" class="error" aria-live="polite"></div>
             </div>
+          </div>
             
+            
+          <div class="row">
             <div class="col-6">
-              <label for="lname">Last Name</label>
-              <div class="container__inputfieldtoggle">
-              <input class="personal" id="lname" type="text" name="Last Name" value="" 
-              aria-label="last name" required></div>
-            <div id="lnerror" class="error" aria-live="polite"></div>
+                <label for="lname">Last Name</label>
+                <div class="container__inputfieldtoggle">
+                <input class="personal" id="lname" type="text" name="Last Name" value="" 
+                aria-label="last name" required></div>
+              <div id="lnerror" class="error" aria-live="polite"></div>
+            </div>
           </div>
 
-        </div>
+        
 
         <div class="row">
          
-            <label for="email">Email Address</label>
-            <div class="container__inputfieldtoggle">
-            <input class="personal" id="email" type="text" name="email" value="" 
-              aria-label="Email Address" required></div>
-            <div id="emerror" class="error" aria-live="polite"></div>
+            <div class="col-6">
+              <label for="email">Email Address</label>
+              <div class="container__inputfieldtoggle">
+              <input class="personal" id="email" type="text" name="email" value="" 
+                aria-label="Email Address" required></div>
+              <div id="emerror" class="error" aria-live="polite"></div>
+            </div>
           
 
         
@@ -64,37 +69,30 @@
           
           
           <div class="row__nomarginb">
-          <label for="password">Password</label>
-          <div class="container__passwordtoggle">
-            <input class="password" id="pw" type="password" name="password" value="" 
-            aria-label="Password" required> <button type="button" id="togglepw"><i class="fas fa-eye-slash"></i></button></div>
-            <div id="pwerror" class="error" aria-live="polite"></div>
+          <div class="col-6">
+            <div class="container__pwlabel"><label for="password">Password</label><button type="button" id="togglepw"><i class="fas fa-eye-slash"></i></button></div>
+            <div class="container__passwordtoggle">
+              <input class="password" id="pw" type="password" name="password" value="" 
+              aria-label="Password" required></div>
+          </div>
         </div>
-
+        <div class="row__password" style="display: none;"><div class="pwconfirm"><i class="far fa-check-circle"></i> Password Confirmed! </div></div>
             <div class="row__automargin">
               <div class="col-6"> 
               <ul class="passwordreq">
-             
               <li><i id="passvalidicon" class="fas fa-check-circle"></i><span id="letter" class="wrongpw">One lowercase character</span> </li>
               <li><i id="passvalidicon2"  class="fas fa-check-circle"></i><span id="capital" class="wrongpw">One uppercase character</span></li>
               </ul>
             </div>
-
                   <div class="col-6"> 
                   <ul class="passwordreq2">
                     <li><i id="passvalidicon3"  class="fas fa-check-circle"></i><span id="number" class="wrongpw">One number</span></li>
                     <li><i id="passvalidicon4"  class="fas fa-check-circle"></i><span id="length" class="wrongpw">8 characters minimum</span></li>
                   </ul>
                   </div>
-                 
-                  
-                
                 </div>
-            
-
-
+                
               <button class="main__form__button--bottombutton" id="btn" type="submit" name="submit" aria-label="submit">Sign Up</button>
-              
             </form>
                       
 

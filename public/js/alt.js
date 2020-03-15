@@ -6,6 +6,12 @@ let email = document.querySelector('#email');
 let username = document.querySelector('#username');
 let password = document.querySelector('#pw');
 let cfpassword = document.querySelector('#cfpw');
+let passwordContainer = document.querySelector('.container__passwordtoggle');
+let pwValidSection = document.querySelector('.row__password');
+let firstList = document.querySelector('.passwordreq')
+let secondList = document.querySelector('.passwordreq2')
+let pwValidSectionRe = document.querySelector('.row__automargin');
+let submitButton = document.querySelector('#btn');
 
 let fnError = document.querySelector('#fnerror');
 let lnError = document.querySelector('#lnerror');
@@ -41,81 +47,129 @@ const emailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 const letters = /^[A-Za-z]+$/;
 
+let fields = document.querySelectorAll('input');
+
+
+
+
+
 
 function validateForm(){
 
 // validation for first name field
     if (firstName.value === ''){
         event.preventDefault();
-        firstName.style.background = 'hsla(0, 100%, 90%, 1)';
+        firstName.style.background = 'hsla(0, 100%, 92%, 1)';
+        firstName.style.border = 'none';
         
        
         // display error messages
         fnError.textContent = "Please enter your first name";
         fnError.classList.add("errormsg");
+
+        // submitButton.disabled = true;
+        // submitButton.style.background = '#f2f2f2';
+        // submitButton.style.color = '#D2D2D2';
     }
 
     else if(firstName.value.match(letters)){
         event.preventDefault();
-        firstName.style.background  = 'hsla(154, 59%, 81%, 1)';
-        
+        firstName.style.background  = 'hsla(154, 59%, 84%, 1)';
+        firstName.style.border = 'none';
 
         // display error messages
+        // submitButton.disabled = false;
+        // submitButton.style.background = '#313131';
+        // submitButton.style.color = '#FFFFFF';
     }
 
     // reset form on submit
-    else {
-        fnError.textContent = '.';
-        firstName.style.background = '#F1F1F3';
+    else  {
         
+      firstName.style.background = 'hsla(0, 100%, 92%, 1)';
+      firstName.style.border = 'none';
+      fnError.textContent = '';
+
+      // submitButton.disabled = true;
+      // submitButton.style.background = '#f2f2f2';
+      // submitButton.style.color = '#D2D2D2';
     }
+
     // reset error state on field input
     firstName.oninput = function () {
-        fnError.textContent = '.';
-        firstName.style.background = '#F1F1F3';
-        
+      firstName.style.background = 'transparent';
+      firstName.style.border = '1px solid #dedede';
+      fnError.textContent = '';
+
+      // submitButton.disabled = false;
+      // submitButton.style.background = '#313131';
+      // submitButton.style.color = '#FFFFFF';
     }
+
+    
 
 // validation for last name field
     if (lastName.value === ''){
         event.preventDefault();
-        lastName.style.background = 'hsla(0, 100%, 90%, 1)';
-        
+        lastName.style.background = 'hsla(0, 100%, 92%, 1)';
+        lastName.style.border = 'none';
         
         // display error messages
         lnError.textContent = "Please Enter Your Last Name";
         lnError.classList.add("errormsg");
+
+        // submitButton.disabled = true;
+        // submitButton.style.background = '#f2f2f2';
+        // submitButton.style.color = '#D2D2D2';
     }
 
 
     else if(lastName.value.match(letters)){
         event.preventDefault();
-        lastName.style.background  = 'hsla(154, 59%, 81%, 1)';
+        lastName.style.background  = 'hsla(154, 59%, 84%, 1)';
+        lastName.style.border = 'none';
         
         // display error messages
+        // submitButton.disabled = false;
+        // submitButton.style.background = '#313131';
+        // submitButton.style.color = '#FFFFFF';
     }
 
     // reset form on submit
     else {
-        lnError.textContent = '.';
-        lastName.style.background = '#F1F1F3';
+      lastName.style.background = 'hsla(0, 100%, 91%, 1)';
+      lastName.style.border = 'none';
+      lnError.textContent = '';
+
+      // submitButton.disabled = true;
+      // submitButton.style.background = '#f2f2f2';
+      // submitButton.style.color = '#D2D2D2';
     }
     // reset error state on field input
     lastName.oninput = function () {
-        lnError.textContent = '.';
-        lastName.style.background = '#F1F1F3';
+    lastName.style.background = 'transparent';
+    lastName.style.border = '1px solid #dedede';
+    lnError.textContent = '';
+
+    // submitButton.disabled = false;
+    // submitButton.style.background = '#313131';
+    // submitButton.style.color = '#FFFFFF';
         
     }
 
 // validation for email field
 if (email.value !== emailValid){
     event.preventDefault();
-    email.style.background = 'hsla(0, 100%, 90%, 1)';
-    
-    
-    // display error messages
-    emError.textContent = "Please Enter Your Email Address";
+    email.style.background = 'hsla(0, 100%, 92%, 1)';
+    email.style.border = 'none';
+       
+        // display error messages
+    emError.textContent = "Please enter a valid email address";
     emError.classList.add("errormsg");
+
+    // submitButton.disabled = true;
+    // submitButton.style.background = '#f2f2f2';
+    // submitButton.style.color = '#D2D2D2';
     
 }
 
@@ -124,8 +178,13 @@ if (email.value !== emailValid){
 
 // reset error state on field input
 email.oninput = function () {
-    emError.textContent = '.';
-    email.style.background = '#F1F1F3';
+  email.style.background = 'transparent';
+  email.style.border = '1px solid #dedede';
+  email.textContent = '';
+
+  // submitButton.disabled = false;
+  // submitButton.style.background = '#313131';
+  // submitButton.style.color = '#FFFFFF';
     
 }
 
@@ -136,30 +195,48 @@ email.oninput = function () {
 
 if (password.value.match(passwValid))
 {  event.preventDefault();
-    password.style.background  = 'hsla(154, 59%, 81%, 1)';
-    togglePwButton.style.background = 'hsla(154, 59%, 81%, 1)';
-
+  password.style.background  = 'hsla(154, 59%, 84%, 1)';
+  password.style.border = 'none';
+    
     // display error messages
-    pwError.textContent = "Password Meets Requirements";
-    pwError.classList.add("successmsg");
-    pwError.style.color = 'hsl(154, 59%, 51%)';
+    pwValidSection.style.display = 'block';
+    pwValidSection.style.background = 'hsla(154, 59%, 91%, 1)';
+    pwValidSectionRe.style.display = 'none';
+    
+    // submitButton.disabled = true;
+    // submitButton.style.background = '#f2f2f2';
+    // submitButton.style.color = '#D2D2D2';
 }
 
-else {event.preventDefault();
-    password.style.background = 'hsla(0, 100%, 90%, 1)';
-    togglePwButton.style.background = 'hsla(0, 100%, 90%, 1)';
-   
+else {
+  event.preventDefault();
+  password.style.background = 'hsla(0, 100%, 92%, 1)';
+  password.style.border = 'none';
+  
     // display error messages
-    pwError.textContent = "Please Create a Valid Password";
-    pwError.classList.add("errormsg");
-    pwError.style.color = 'hsl(0, 100%, 74%)';
+    // pwError.textContent = "Please Create a Valid Password";
+    // pwError.classList.add("errormsg");
+    pwValidSection.style.display = 'none';
+    pwValidSectionRe.style.display = 'grid';
+
+    // submitButton.disabled = true;
+    // submitButton.style.background = '#f2f2f2';
+    // submitButton.style.color = '#D2D2D2';
+    
+    
 }
 
 // reset error state on field input
 password.oninput = function () {
-    pwError.textContent = '.';
-    password.style.background = '#F1F1F3';
-    togglePwButton.style.background = '#F1F1F3';
+  password.style.background = 'transparent';
+  password.style.border = '1px solid #dedede';
+  // pwError.textContent = '.';
+  pwValidSection.style.display = 'none';
+  pwValidSectionRe.style.display = 'grid';
+
+  // submitButton.disabled = false;
+  // submitButton.style.background = '#313131';
+  // submitButton.style.color = '#FFFFFF';
 }
 }
 
@@ -169,8 +246,13 @@ function valEmail(){
 
 if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value))
 { event.preventDefault();
-    email.style.background = 'hsla(154, 59%, 81%, 1)';
-    emError.textContent = ".";
+  email.style.background  = 'hsla(154, 59%, 84%, 1)';
+  email.style.border = 'none';
+  emError.textContent = '';
+
+  // submitButton.disabled = false;
+  // submitButton.style.background = '#313131';
+  // submitButton.style.color = '#FFFFFF';
 }
 }
 
@@ -178,6 +260,94 @@ form.addEventListener('submit', valEmail);
 
 
 
+
+
+// function checkFields() {
+  
+//   if (firstName.value === '')
+//   { 
+//     submitButton.disabled = true;
+//     submitButton.style.background = '#f2f2f2';
+//     submitButton.style.color = '#D2D2D2';
+//   }
+
+//   else if (firstName.value !== letters)
+//   { 
+//     submitButton.disabled = true;
+//     submitButton.style.background = '#f2f2f2';
+//     submitButton.style.color = '#D2D2D2';
+//   }
+
+// else (firstName.value.match(letters))
+// { 
+//   submitButton.disabled = false;
+//   submitButton.style.background = '#313131';
+//   submitButton.style.color = '#FFFFFF';
+// }
+
+//   if (lastName.value === '')
+
+//   { event.preventDefault()
+//     submitButton.disabled = true;
+//     submitButton.style.background = '#f2f2f2';
+//     submitButton.style.color = '#D2D2D2';
+//   }
+
+//   else if (lastName.value !== letters)
+//   { event.preventDefault()
+//     submitButton.disabled = true;
+//     submitButton.style.background = '#f2f2f2';
+//     submitButton.style.color = '#D2D2D2';
+//   }
+
+//   else (lastName.value.match(letters))
+//   { event.preventDefault()
+//     submitButton.disabled = false;
+//     submitButton.style.background = '#313131';
+//     submitButton.style.color = '#FFFFFF';
+//   }
+
+//   if (email.value === '')
+//   { event.preventDefault()
+//     submitButton.disabled = true;
+//     submitButton.style.background = '#f2f2f2';
+//     submitButton.style.color = '#D2D2D2';
+//   }
+
+//   else if (email.value !== emailValid)
+//   { event.preventDefault()
+//     submitButton.disabled = true;
+//     submitButton.style.background = '#f2f2f2';
+//     submitButton.style.color = '#D2D2D2';
+//   }
+
+//   else (email.value.match(emailValid))
+// { event.preventDefault()
+//   submitButton.disabled = false;
+//   submitButton.style.background = '#313131';
+//   submitButton.style.color = '#FFFFFF';
+// }
+
+//   if (password.value === '')
+//   { event.preventDefault()
+//     submitButton.disabled = true;
+//     submitButton.style.background = '#f2f2f2';
+//     submitButton.style.color = '#D2D2D2';
+//   }
+
+//   else if (password.value !== passwValid)
+//   { event.preventDefault()
+//     submitButton.disabled = true;
+//     submitButton.style.background = '#f2f2f2';
+//     submitButton.style.color = '#D2D2D2';
+//   }
+
+//   else (password.value.match(passwValid))
+// { event.preventDefault()
+//   submitButton.disabled = false;
+//   submitButton.style.background = '#313131';
+//   submitButton.style.color = '#FFFFFF';
+// }
 
 
 
@@ -195,6 +365,7 @@ password.onkeyup = function passwordValidity() {
     } else {
       pwletter.classList.remove("validpassw");
       pwletter.classList.add("wrongpw");
+      passSignalLower.style.color = 'hsl(0, 100%, 74%)';
   }
   
     // Validate capital letters
@@ -206,6 +377,7 @@ password.onkeyup = function passwordValidity() {
     } else {
       pwcapital.classList.remove("validpassw");
       pwcapital.classList.add("wrongpw");
+      passSignalUpper.style.color = 'hsl(0, 100%, 74%)';
     }
   
     // Validate numbers
@@ -217,6 +389,8 @@ password.onkeyup = function passwordValidity() {
     } else {
       pwnumber.classList.remove("validpassw");
       pwnumber.classList.add("wrongpw");
+      passSignalNumber.style.color = 'hsl(0, 100%, 74%)';
+      
     }
   
     // Validate length
@@ -227,6 +401,7 @@ password.onkeyup = function passwordValidity() {
     } else {
       pwlength.classList.remove("validpassw");
       pwlength.classList.add("wrongpw");
+      passSignalChara.style.color = 'hsl(0, 100%, 74%)';
     }
   
 
@@ -246,7 +421,5 @@ togglePwButton.onclick = function() {passwordToggle()};
     }
 
   }
-
-  
 
   
