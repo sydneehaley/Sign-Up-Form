@@ -1,77 +1,123 @@
 /* Create An Account Form Validation Project */
+// Author: Sydnee Haley (sydneehaley.com)
+
 /* Font Imports */
-@import url("https://fonts.googleapis.com/css?family=Barlow|IBM+Plex+Serif:300,400,500,600,700|Inter:400,500,600,700,800,900|Lora:400,700|Merriweather:400,700,900|Playfair+Display:600,700,800,900|Rubik&display=swap");
+// Google Fonts (font.google.com)
+
+@import url('https://use.typekit.net/cng1fua.css');
+@import url('https://fonts.googleapis.com/css?family=Archivo:400,500,600,700|Libre+Franklin:300,400,500,600,700|Rubik:300,400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700&display=swap');
+@import url('https://use.typekit.net/thg3nai.css');
+@import url('https://fonts.googleapis.com/css?family=Arimo:700|Karla:400,700|Roboto+Condensed:700|Roboto:900&display=swap');
+
 /* Theme Colors */
+
+$red: hsl(0, 100%, 74%);
+$errormsgdrkred: #a73204;
+$green: hsl(154, 59%, 51%);
+$black: #000;
+$lightgray: #c2c2c2;
+$lightgray2: #f2f2f2;
+$mediumgray2: #d2d2d2;
+$mediumgray: #9e9e9e;
+$darkgray: #313131;
+$black: #000;
+$white: #fff;
+
 /* Theme Fonts */
+
+$themefontfamily: 'Karla', sans-serif;
+
+$basefontsize: 16px;
+$h1: 1.5em;
+
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+
 /* body*/
+
 body {
-  background: url("file:///Users/sydneehaley/Desktop/Sign-Up-Form/images/inspiration-geometry.png") repeat, #3650b5;
-  font-family: "Rubik", sans-serif;
+  background: #ffffff;
+  font-size: 16px;
+  font-family: $themefontfamily;
   color: #000;
   margin: 0;
-  font-size: 16px;
-  overflow-x: hidden; }
+  font-size: $basefontsize;
+  overflow-x: hidden;
+}
 
 @media (max-width: 414px) {
   body {
-    background: #fff;
-    /* fallback for old browsers */
+    background: #fff; /* fallback for old browsers */
     font-size: 16px;
-    font-family: "Rubik", sans-serif;
+    font-family: $themefontfamily;
     color: #000;
     margin: 0;
-    font-size: 16px;
-    overflow-x: hidden; } }
+    font-size: $basefontsize;
+    overflow-x: hidden;
+  }
+}
 
 /* Containers */
+
 .nav {
-  background: #313131;
+  background: $darkgray;
   margin: 0;
-  height: 10vh; }
+  height: 10vh;
+}
 
 .main {
   display: grid;
   grid-gap: 0px;
   grid-template-columns: auto;
-  font-family: "Rubik", sans-serif;
+  font-family: $themefontfamily;
   z-index: 2;
   background: transparent;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+}
 
+// Phones , portrait max: 414px
 @media (max-width: 414px) {
   .main {
     display: grid;
     grid-gap: 0px;
     grid-template-columns: 100%;
     flex-direction: column;
-    font-family: 'Inter', sans-serif;
+    font-family: $themefontfamily;
     z-index: 2;
     background: transparent;
-    padding: 21% 0%;
-    margin: 0; } }
+    padding: 22% 5%;
+  }
+}
 
 .main__rightcolumn {
   display: grid;
-  width: 425px;
+  width: 400px;
   font-size: 16px;
-  background: #fff;
+  background: transparent;
   font-weight: 300;
   color: #a3a3a3;
   margin: 7vh auto;
+  border-radius: 7px;
   padding: 3% 3%;
-  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1); }
+}
 
 @media (max-width: 414px) {
   .main__rightcolumn {
     display: grid;
-    width: 90%;
+    width: 100%;
     font-size: 16px;
     font-weight: 300;
     background: transparent;
     color: #a3a3a3;
     margin: 0;
-    padding: 4% 5%;
-    box-shadow: none; } }
+    padding: 0;
+    border-radius: 7px;
+  }
+}
 
 .row__6 {
   margin-bottom: 1rem;
@@ -80,7 +126,8 @@ body {
   grid-column-end: 1;
   grid-template-columns: auto auto;
   grid-column-gap: 1rem;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .row {
   margin-bottom: 1rem;
@@ -89,7 +136,8 @@ body {
   grid-column-end: 1;
   grid-template-columns: 100%;
   width: 100%;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .row__nomarginb {
   display: grid;
@@ -97,7 +145,8 @@ body {
   grid-column-end: 1;
   grid-template-columns: 100%;
   width: 100%;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .row__automargin {
   display: grid;
@@ -107,7 +156,8 @@ body {
   grid-column-gap: 2rem;
   width: 101%;
   /* margin-left: 1rem; */
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 @media (max-width: 414px) {
   .row__automargin {
@@ -118,7 +168,9 @@ body {
     grid-template-columns: auto auto;
     grid-column-gap: 1rem;
     width: 100%;
-    box-sizing: border-box; } }
+    box-sizing: border-box;
+  }
+}
 
 .row__password {
   margin: 0;
@@ -127,54 +179,65 @@ body {
   grid-column-end: 1;
   grid-template-columns: 100%;
   width: 100%;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .col-6 {
-  width: auto; }
+  width: auto;
+}
 
 .container__passwordtoggle {
   display: flex;
   width: 100%;
-  margin-bottom: 1rem; }
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 
 .container__pwlabel {
   display: flex;
-  width: 102%; }
+  width: 102%;
+}
 
 .container__inputfieldtoggle {
   margin-top: 1rem;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0.5rem;
+}
 
 /* Paragraph & List Styles */
+
 .main__rightcolumn p {
-  font-size: 1rem;
-  font-family: "Rubik", sans-serif;
+  font-size: 0.9rem;
   margin-bottom: 3rem;
   text-align: center;
-  font-weight: 400;
-  color: #313131;
-  margin-top: 0.5rem; }
+  font-weight: $regular;
+  color: $mediumgray;
+  margin-top: 0.5rem;
+}
 
 @media (max-width: 414px) {
   .main__rightcolumn p {
     font-size: 0.9rem;
     margin-bottom: 3rem;
     text-align: center;
-    font-weight: 400;
-    color: #313131;
-    margin-top: 0.5rem; } }
+    font-weight: $regular;
+    color: $mediumgray;
+    margin-top: 0.5rem;
+  }
+}
 
 .passwordreq {
   margin: 0;
   padding: 0;
   list-style-position: inside;
-  list-style-type: none; }
+  list-style-type: none;
+}
 
 .passwordreq2 {
   margin: 0;
   padding: 0;
   list-style-position: inside;
-  list-style-type: none; }
+  list-style-type: none;
+}
 
 #passvalidicon {
   display: inline;
@@ -182,7 +245,8 @@ body {
   margin-right: 4px;
   font-family: 'Font Awesome\ 5 Free';
   font-weight: 900;
-  color: #a73204; }
+  color: $errormsgdrkred;
+}
 
 #passvalidicon2 {
   display: inline;
@@ -190,7 +254,8 @@ body {
   margin-right: 4px;
   font-family: 'Font Awesome\ 5 Free';
   font-weight: 900;
-  color: #a73204; }
+  color: $errormsgdrkred;
+}
 
 #passvalidicon3 {
   display: inline;
@@ -198,7 +263,8 @@ body {
   margin-right: 4px;
   font-family: 'Font Awesome\ 5 Free';
   font-weight: 900;
-  color: #a73204; }
+  color: $errormsgdrkred;
+}
 
 #passvalidicon4 {
   display: inline;
@@ -206,65 +272,74 @@ body {
   margin-right: 4px;
   font-family: 'Font Awesome\ 5 Free';
   font-weight: 900;
-  color: #a73204; }
+  color: $errormsgdrkred;
+}
 
 /* Headers & Labels */
+
 .main__rightcolumn h1 {
-  font-family: "Merriweather", serif;
-  font-size: 2rem;
-  font-weight: 700;
+  font-family: $themefontfamily;
+  font-size: $h1;
+  font-weight: $bold;
   letter-spacing: -0.3px;
   line-height: 1rem;
-  color: #313131;
+  color: $darkgray;
   text-align: center;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
 
-.main__rightcolumn i {
-  text-align: center;
-  margin-bottom: 1rem; }
-
+// Phones , portrait max: 414px
 @media (max-width: 414px) {
   .main__rightcolumn h1 {
-    font-family: "Merriweather", serif;
-    font-size: 1.5em;
-    font-weight: 700;
+    font-family: $themefontfamily;
+    font-size: $h1;
+    font-weight: $semibold;
     letter-spacing: -0.3px;
     line-height: 1rem;
-    color: #313131;
+    color: $darkgray;
     text-align: center;
-    margin-bottom: 1rem; } }
+    margin-bottom: 1rem;
+  }
+}
 
 #main-form.form-inline label {
-  font-size: 0.85rem;
-  font-weight: 600;
-  font-family: "Rubik", sans-serif;
-  color: #313131;
-  width: 100%; }
+  font-size: 0.9rem;
+  font-weight: $medium;
+  color: $darkgray;
+  width: 100%;
+}
 
 /* Links */
+
 a:link {
-  color: #000;
-  font-weight: 700;
-  text-decoration: none; }
+  color: $black;
+  font-weight: $bold;
+  text-decoration: none;
+}
 
 a:visited {
-  color: #000;
-  font-weight: 700;
-  text-decoration: none; }
+  color: $black;
+  font-weight: $bold;
+  text-decoration: none;
+}
 
 a:hover {
-  color: #000;
-  font-weight: 700;
-  text-decoration: none; }
+  color: $black;
+  font-weight: $bold;
+  text-decoration: none;
+}
 
 a:active {
-  color: #000;
-  font-weight: 700;
-  text-decoration: none; }
+  color: $black;
+  font-weight: $bold;
+  text-decoration: none;
+}
 
 /* Form & Input Field Styles */
+
 .personal {
-  font-family: "Rubik", sans-serif;
+  font-family: $themefontfamily;
   padding: 0.5rem 0.5rem 0.5rem 1.5rem;
   margin: 0;
   height: 45px;
@@ -273,15 +348,16 @@ a:active {
   border: 1px solid #dedede;
   outline: none;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: $medium;
   color: #313131;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 7px; }
+  border-radius: 0;
+}
 
 .personal:focus {
-  background: #f2f2f2;
+  background: $lightgray2;
   font-family: 'Libre Franklin', sans-serif;
   padding: 0.5rem 0.5rem 0.5rem 1.5rem;
   margin: 0;
@@ -289,17 +365,19 @@ a:active {
   width: 100%;
   box-sizing: border-box;
   border: none;
+  // border: 2px solid #3EB3BD;
   outline: none;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: $medium;
   color: #313131;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 7px; }
+  border-radius: 0;
+}
 
 .password {
-  font-family: "Rubik", sans-serif;
+  font-family: $themefontfamily;
   padding: 0.5rem 0.5rem 0.5rem 1.5rem;
   margin: 0;
   width: 100%;
@@ -313,11 +391,12 @@ a:active {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 7px; }
+  border-radius: 0;
+}
 
 .password:focus {
-  background: #f2f2f2;
-  font-family: "Rubik", sans-serif;
+  background: $lightgray2;
+  font-family: $themefontfamily;
   padding: 0.5rem 0.5rem 0.5rem 1.5rem;
   margin: 0;
   height: 45px;
@@ -326,244 +405,276 @@ a:active {
   border: none;
   outline: none;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: $medium;
   color: #313131;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 7px; }
+  border-radius: 0;
+}
 
 .personal::-webkit-input-placeholder {
-  color: #ff7a7a;
+  color: $red;
   font-size: 0.8rem;
-  font-weight: 500; }
+  font-weight: $medium;
+}
 
 /* Password Validation Styles */
+
 #letter.validpassw {
-  color: #000;
-  font-weight: 500;
-  font-size: 0.85rem;
+  color: $black;
+  font-weight: $medium;
+  font-size: 0.8rem;
   margin: 0;
-  display: inline; }
+  display: inline;
+}
 
 @media (max-width: 414px) {
   #letter.validpassw {
-    color: #000;
-    font-weight: 500;
+    color: $black;
+    font-weight: $medium;
     font-size: 0.8rem;
     margin: 0;
-    display: inline; } }
+    display: inline;
+  }
+}
 
 #capital.validpassw {
-  color: #000;
-  font-weight: 500;
-  font-size: 0.85rem;
+  color: $black;
+  font-weight: $medium;
+  font-size: 0.8rem;
   margin: 0;
-  display: inline; }
+  display: inline;
+}
 
 @media (max-width: 414px) {
   #capital.validpassw {
-    color: #000;
-    font-weight: 500;
+    color: $black;
+    font-weight: $medium;
     font-size: 0.8rem;
     margin: 0;
-    display: inline; } }
+    display: inline;
+  }
+}
 
 #number.validpassw {
-  color: #000;
-  font-weight: 400;
+  color: $black;
+  font-weight: $regular;
   font-size: 0.8rem;
   margin: 0;
-  display: inline; }
+  display: inline;
+}
 
 @media (max-width: 414px) {
   #number.validpassw {
-    color: #000;
-    font-weight: 500;
+    color: $black;
+    font-weight: $medium;
     font-size: 0.8rem;
     margin: 0;
-    display: inline; } }
+    display: inline;
+  }
+}
 
 #length.validpassw {
-  color: #000;
-  font-weight: 400;
-  font-size: 0.85rem;
+  color: $black;
+  font-weight: $regular;
+  font-size: 0.8rem;
   margin: 0;
-  display: inline; }
+  display: inline;
+}
 
 @media (max-width: 414px) {
   #length.validpassw {
-    color: #000;
-    font-weight: 500;
+    color: $black;
+    font-weight: $medium;
     font-size: 0.8rem;
     margin: 0;
-    display: inline; } }
+    display: inline;
+  }
+}
 
 #letter.wrongpw {
-  color: #a73204;
-  font-weight: 400;
-  font-size: 0.85rem;
+  color: $errormsgdrkred;
+  font-weight: $regular;
+  font-size: 0.8rem;
   margin: 0;
-  display: inline; }
+  display: inline;
+}
 
 @media (max-width: 414px) {
   #letter.wrongpw {
-    color: #a73204;
-    font-weight: 400;
+    color: $errormsgdrkred;
+    font-weight: $regular;
     font-size: 0.8rem;
     margin: 0;
-    display: inline; } }
+    display: inline;
+  }
+}
 
 #capital.wrongpw {
-  color: #a73204;
-  font-weight: 400;
-  font-size: 0.85rem;
+  color: $errormsgdrkred;
+  font-weight: $regular;
+  font-size: 0.8rem;
   margin: 0;
-  display: inline; }
+  display: inline;
+}
 
 @media (max-width: 414px) {
   #capital.wrongpw {
-    color: #a73204;
-    font-weight: 400;
+    color: $errormsgdrkred;
+    font-weight: $regular;
     font-size: 0.8rem;
     margin: 0;
-    display: inline; } }
+    display: inline;
+  }
+}
 
 #number.wrongpw {
-  color: #a73204;
-  font-weight: 400;
-  font-size: 0.85rem;
+  color: $errormsgdrkred;
+  font-weight: $regular;
+  font-size: 0.8rem;
   margin: 0;
-  display: inline; }
+  display: inline;
+}
 
 @media (max-width: 414px) {
   #number.wrongpw {
-    color: #a73204;
-    font-weight: 400;
+    color: $errormsgdrkred;
+    font-weight: $regular;
     font-size: 0.8rem;
     margin: 0;
-    display: inline; } }
+    display: inline;
+  }
+}
 
 #length.wrongpw {
-  color: #a73204;
-  font-weight: 400;
-  font-size: 0.85rem;
+  color: $errormsgdrkred;
+  font-weight: $regular;
+  font-size: 0.8rem;
   margin: 0;
-  display: inline; }
+  display: inline;
+}
 
 @media (max-width: 414px) {
   #length.wrongpw {
-    color: #a73204;
-    font-weight: 400;
+    color: $errormsgdrkred;
+    font-weight: $regular;
     font-size: 0.8rem;
     margin: 0;
-    display: inline; } }
+    display: inline;
+  }
+}
 
 .error {
   font-size: 0.7rem;
   font-weight: 600;
   color: #ff7a7a;
   text-align: left;
-  margin-bottom: 3%; }
+  margin-bottom: 3%;
+}
 
 .errormsg {
   font-size: 0.8rem;
   font-weight: 600;
-  color: #a73204;
+  color: $errormsgdrkred;
   text-align: left;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .pwconfirm {
+  background: 'hsla(154, 59%, 92%, 1)';
   width: 100%;
-  height: 32px;
   padding: 0.5rem;
   font-size: 0.8rem;
-  color: #313131;
-  font-weight: 500;
-  box-sizing: border-box; }
+  color: $darkgray;
+  font-weight: $medium;
+  box-sizing: border-box;
+}
 
 #togglepw {
   background: transparent;
   border: none;
   font-size: 0.7rem;
   outline: none;
-  top: 45px;
+  top: 48px;
   left: -12px;
-  position: relative; }
+  position: relative;
+}
 
 /* Buttons */
+
 .main__form__button--bottombutton {
   box-sizing: border-box;
-  background: #65d676;
+  background: $darkgray;
   width: 100%;
   padding: 1rem 1rem;
-  font-family: "Rubik", sans-serif;
-  font-size: 0.9rem;
+  font-family: $themefontfamily;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
   border: none;
   margin-top: 2rem;
-  color: #fff;
+  color: $white;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 7px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; }
+  border-radius: 0;
+}
 
 .main__form__button--bottombutton:disabled {
   box-sizing: border-box;
-  background: #f2f2f2;
+  background: $lightgray2;
   width: 100%;
   padding: 1rem 1rem;
-  font-family: "Rubik", sans-serif;
-  font-size: 0.9rem;
+  font-family: $themefontfamily;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
   border: none;
   margin-top: 2rem;
-  color: #d2d2d2;
+  color: $mediumgray2;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border-radius: 7px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; }
+  border-radius: 0;
+}
 
 @media (max-width: 414px) {
   .main__form__button--bottombutton {
     box-sizing: border-box;
-    background: #65d676;
+    background: $darkgray;
     width: 100%;
     padding: 1rem 1rem;
-    font-family: "Rubik", sans-serif;
-    font-size: 0.9rem;
+    font-family: $themefontfamily;
+    font-size: 0.8rem;
     font-weight: 600;
+    text-transform: uppercase;
     border: none;
     margin-top: 1.5rem;
-    color: #fff;
+    color: $white;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border-radius: 7px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none; } }
+    border-radius: 0;
+  }
+}
 
 @media (max-width: 414px) {
   .main__form__button--bottombutton:disabled {
     box-sizing: border-box;
-    background: #f2f2f2;
+    background: $lightgray2;
     width: 100%;
     padding: 1rem 1rem;
-    font-family: "Rubik", sans-serif;
-    font-size: 0.9rem;
+    font-family: $themefontfamily;
+    font-size: 0.8rem;
     font-weight: 600;
+    text-transform: uppercase;
     border: none;
     margin-top: 1.5rem;
-    color: #d2d2d2;
+    color: $mediumgray2;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border-radius: 7px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none; } }
+    border-radius: 0;
+  }
+}

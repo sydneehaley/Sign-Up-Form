@@ -51,38 +51,6 @@ const emailValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 const letters = /^[A-Za-z]+$/;
 
-firstName.oninput = function enableSubmitFirst() {
-  if (firstName.value === '') {
-    submitButton.disabled = true;
-  } else {
-    submitButton.disabled = false;
-  }
-};
-
-lastName.oninput = function enableSubmitSecond() {
-  if (lastName.value === '') {
-    submitButton.disabled = true;
-  } else {
-    submitButton.disabled = false;
-  }
-};
-
-email.oninput = function enableSubmitThird() {
-  if (email.value === '') {
-    submitButton.disabled = true;
-  } else {
-    submitButton.disabled = false;
-  }
-};
-
-password.oninput = function enableSubmitFour() {
-  if (password.value === '') {
-    submitButton.disabled = true;
-  } else {
-    submitButton.disabled = false;
-  }
-};
-
 function validateForm() {
   // validation for first name field
   if (firstName.value === '') {
@@ -94,7 +62,7 @@ function validateForm() {
     fnError.classList.add('errormsg');
   } else if (firstName.value.match(letters)) {
     event.preventDefault();
-    firstName.style.background = 'hsla(154, 59%, 84%, 1)';
+    firstName.style.background = 'hsla(129, 58%, 82%, 1)';
     firstName.style.border = 'none';
   } else {
     firstName.style.background = 'hsla(0, 100%, 92%, 1)';
@@ -115,11 +83,11 @@ function validateForm() {
     lastName.style.border = 'none';
 
     // display error messages
-    lnError.textContent = 'Please Enter Your Last Name';
+    lnError.textContent = 'Please enter your last name';
     lnError.classList.add('errormsg');
   } else if (lastName.value.match(letters)) {
     event.preventDefault();
-    lastName.style.background = 'hsla(154, 59%, 84%, 1)';
+    lastName.style.background = 'hsla(129, 58%, 82%, 1)';
     lastName.style.border = 'none';
   }
 
@@ -158,7 +126,7 @@ function validateForm() {
 
   if (password.value.match(passwValid)) {
     event.preventDefault();
-    password.style.background = 'hsla(154, 59%, 84%, 1)';
+    password.style.background = 'hsla(129, 58%, 82%, 1)';
     password.style.border = 'none';
 
     // display error messages
@@ -189,7 +157,7 @@ form.addEventListener('submit', validateForm);
 function valEmail() {
   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
     event.preventDefault();
-    email.style.background = 'hsla(154, 59%, 84%, 1)';
+    email.style.background = 'hsla(129, 58%, 82%, 1)';
     email.style.border = 'none';
     emError.textContent = '';
   }
