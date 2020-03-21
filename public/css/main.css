@@ -491,6 +491,16 @@ a:active {
   left: -12px;
   position: relative; }
 
+@media (max-width: 414px) {
+  #togglepw {
+    background: transparent;
+    border: none;
+    font-size: 0.8rem;
+    outline: none;
+    top: 47px;
+    left: -12px;
+    position: relative; } }
+
 /* Buttons */
 .main__form__button--bottombutton {
   box-sizing: border-box;
