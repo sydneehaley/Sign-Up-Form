@@ -1,12 +1,18 @@
 /* Create An Account Form Validation Project */
 /* Font Imports */
 @import url("https://fonts.googleapis.com/css?family=Barlow|IBM+Plex+Serif:300,400,500,600,700|Inter:400,500,600,700,800,900|Lora:400,700|Merriweather:400,700,900|Playfair+Display:600,700,800,900|Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap");
 /* Theme Colors */
 /* Theme Fonts */
 /* body*/
 body {
-  background: url("file:///Users/sydneehaley/Desktop/Sign-Up-Form/images/inspiration-geometry.png") repeat, #3650b5;
-  font-family: "Rubik", sans-serif;
+  background: #dd3e54;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6be585, #dd3e54);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6be585, #dd3e54);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: "Libre Franklin", sans-serif;
   color: #000;
   margin: 0;
   font-size: 16px;
@@ -17,7 +23,7 @@ body {
     background: #fff;
     /* fallback for old browsers */
     font-size: 16px;
-    font-family: "Rubik", sans-serif;
+    font-family: "Libre Franklin", sans-serif;
     color: #000;
     margin: 0;
     font-size: 16px;
@@ -33,7 +39,7 @@ body {
   display: grid;
   grid-gap: 0px;
   grid-template-columns: auto;
-  font-family: "Rubik", sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   z-index: 2;
   background: transparent;
   overflow-x: hidden; }
@@ -59,6 +65,7 @@ body {
   color: #a3a3a3;
   margin: 7vh auto;
   padding: 3% 3%;
+  border-radius: 7px;
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1); }
 
 @media (max-width: 414px) {
@@ -148,7 +155,7 @@ body {
 /* Paragraph & List Styles */
 .main__rightcolumn p {
   font-size: 1rem;
-  font-family: "Rubik", sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   margin-bottom: 3rem;
   text-align: center;
   font-weight: 400;
@@ -210,14 +217,14 @@ body {
 
 /* Headers & Labels */
 .main__rightcolumn h1 {
-  font-family: "Merriweather", serif;
-  font-size: 2rem;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: -0.3px;
   line-height: 1rem;
   color: #313131;
-  text-align: center;
-  margin-bottom: 1rem; }
+  text-align: left;
+  margin: 0 0 3rem 0; }
 
 .main__rightcolumn i {
   text-align: center;
@@ -225,7 +232,7 @@ body {
 
 @media (max-width: 414px) {
   .main__rightcolumn h1 {
-    font-family: "Merriweather", serif;
+    font-family: "Libre Franklin", sans-serif;
     font-size: 1.5em;
     font-weight: 700;
     letter-spacing: -0.3px;
@@ -236,8 +243,8 @@ body {
 
 #main-form.form-inline label {
   font-size: 0.85rem;
-  font-weight: 600;
-  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-family: "Libre Franklin", sans-serif;
   color: #313131;
   width: 100%; }
 
@@ -264,7 +271,7 @@ a:active {
 
 /* Form & Input Field Styles */
 .personal {
-  font-family: "Rubik", sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   padding: 0.5rem 0.5rem 0.5rem 1.5rem;
   margin: 0;
   height: 45px;
@@ -299,7 +306,7 @@ a:active {
   border-radius: 7px; }
 
 .password {
-  font-family: "Rubik", sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   padding: 0.5rem 0.5rem 0.5rem 1.5rem;
   margin: 0;
   width: 100%;
@@ -317,7 +324,7 @@ a:active {
 
 .password:focus {
   background: #f2f2f2;
-  font-family: "Rubik", sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   padding: 0.5rem 0.5rem 0.5rem 1.5rem;
   margin: 0;
   height: 45px;
@@ -504,10 +511,10 @@ a:active {
 /* Buttons */
 .main__form__button--bottombutton {
   box-sizing: border-box;
-  background: #65d676;
+  background: #313131;
   width: 100%;
   padding: 1rem 1rem;
-  font-family: "Rubik", sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   font-size: 0.9rem;
   border: none;
   margin-top: 2rem;
@@ -525,7 +532,7 @@ a:active {
   background: #f2f2f2;
   width: 100%;
   padding: 1rem 1rem;
-  font-family: "Rubik", sans-serif;
+  font-family: "Libre Franklin", sans-serif;
   font-size: 0.9rem;
   border: none;
   margin-top: 2rem;
@@ -541,10 +548,10 @@ a:active {
 @media (max-width: 414px) {
   .main__form__button--bottombutton {
     box-sizing: border-box;
-    background: #65d676;
+    background: #313131;
     width: 100%;
     padding: 1rem 1rem;
-    font-family: "Rubik", sans-serif;
+    font-family: "Libre Franklin", sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
     border: none;
@@ -564,7 +571,7 @@ a:active {
     background: #f2f2f2;
     width: 100%;
     padding: 1rem 1rem;
-    font-family: "Rubik", sans-serif;
+    font-family: "Libre Franklin", sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
     border: none;
